@@ -1,0 +1,46 @@
+{% if event_detail %}
+    {% if event_detail.event_type.id == 1 %}
+        <h2>Lecture</h2>
+        <h4>Course: </h4><p>{{ event_detail.name }}</p>
+        <h4>Time: </h4><p>{{ event_detail.ltiming }}</p>
+        <h4>Slot: </h4><p>{{ event_detail.slot }}</p>
+        <h4>Duration: </h4><p>{{ event_detail.duration }} hrs</p>
+    
+    {% else %}
+        {% if event_detail.event_type.id == 2 %}
+        <h2>Project/Assignment</h2>
+        <h4>Course: </h4><p>{{ event_detail.course }}</p>
+        <h4>Name: </h4><p>{{ event_detail.name }}</p>
+        <h4>Time: </h4><p>{{ event_detail.ltiming }}</p>
+        <h4>Due date: </h4><p>{{ event_detail.last_date }}</p>
+        <h4>Duration: </h4><p>{{ event_detail.duration }} hrs</p>
+        <h4>This much is done: </h4><p>{{ event_detail.complete }}</p>
+        <h4>Diffculty: </h4><p>{{event_detail.user_difficulty}}</p>
+        
+        {% else %}
+            {% if event_detail.event_type.id == 4 %}
+            <h2>Club Activity</h2>
+            <h4>Club name: </h4><p>{{ event_detail.name }}</p>
+            <h4>Activity: </h4><p>{{ event_detail.event }}</p>
+            <h4>Time: </h4><p>{{ event_detail.e_time }}</p>
+            <h4>Venue: </h4><p>{{ event_detail.venue }}</p>
+            <h4>Duration: </h4><p>{{ event_detail.duration }} hrs</p>
+            <h4>This much is done: </h4><p>{{ event_detail.complete }}</p>
+        
+            <h4>Diffculty: </h4><p>{{event_detail.user_difficulty}}</p>
+            {% else %}
+                {% if event_detail.event_type.id == 5 %}
+                <h2>Other Activity</h2>
+                <h4>Activity: </h4><p>{{ event_detail.name }}</p>
+                <h4>Time: </h4><p>{{ event_detail.time }}</p>
+                <!--    <h4>Venue: </h4><p>{{ event_detail.venue }}</p>-->
+                <h4>Duration: </h4><p>{{ event_detail.duration }} hrs</p>
+                <h4>This much is done: </h4><p>{{ event_detail.complete }}</p>
+        
+        <!--<h4>Diffculty: </h4><p>{{event_detail.user_difficulty}}</p>-->
+                 {% endif %}
+            {% endif %}
+        {% endif %}
+
+    {% endif %}
+{% endif %}

@@ -15,11 +15,13 @@ class Event_Type(models.Model):
 
 class Project(models.Model):
     course = models.CharField(max_length=5)
+    name = models.CharField(max_length=40)
     event_type = models.ForeignKey(Event_Type)
     last_date = models.DateTimeField()
 #    event = models.ForeignKey(Events)
-    duration = models.FloatField()
-    complete = models.FloatField()
+    duration = models.FloatField(None)
+    
+    complete = models.FloatField(null=True)
     USER_DIFF_CHOICES = (
             (1,1),
             (2,2),
@@ -36,8 +38,9 @@ class Club(models.Model):
     e_time = models.DateTimeField()
     venue = models.CharField(max_length=70)
  #   event = models.ForeignKey(Events)
-    duration = models.FloatField()
-    complete = models.FloatField()
+    duration = models.FloatField(None)
+    event_type = models.ForeignKey(Event_Type)
+    complete = models.FloatField(null=True)
     USER_DIFF_CHOICES = (
             (1,1),
             (2,2),
@@ -49,6 +52,7 @@ class Club(models.Model):
     
 class Lecture(models.Model):
     ltiming = models.DateTimeField()
+    name = models.CharField(max_length=40)
     SLOT_CHOICES = (
             (1, 1),
             (2,2),
@@ -61,8 +65,9 @@ class Lecture(models.Model):
     )
   #  event = models.ForeignKey(Events)
     slot = models.IntegerField(choices=SLOT_CHOICES)
-    duration = models.FloatField()
-    complete = models.FloatField()
+    duration = models.FloatField(None)
+    event_type = models.ForeignKey(Event_Type)
+    complete = models.FloatField(null=True)
     USER_DIFF_CHOICES = (
             (1,1),
             (2,2),
@@ -77,8 +82,10 @@ class Other(models.Model):
     time = models.DateTimeField()
    #duration = models.FloatField()
    #event = models.ForeignKey(Events)
-    duration = models.FloatField()
-    complete = models.FloatField()
+    venue = models.CharField(max_length=40)
+    duration = models.FloatField(None)
+    event_type = models.ForeignKey(Event_Type)
+    complete = models.FloatField(null=True)
     #USER_DIFF_CHOICES = (
      #       (1,1),
       #      (2,2),

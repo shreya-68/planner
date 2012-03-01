@@ -13,9 +13,9 @@ urlpatterns = patterns('',
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-    url(r'^create_plan/$', 'create_plan.views.index'),
-    url(r'^events/(?<events_id>\d+)/$', 'event.views.detail'),
-    
-    
+    #url(r'^create_plan/$', 'create_plan.views.index'),
+    url(r'^events/(?P<event_type_id>\d+)/(?P<event_id>\d+)/$', 'event.views.event_detail'),
+    url(r'^events/(?P<event_type_id>\d+)/$','event.views.event_type_detail'),
+    url(r'^events/$', 'event.views.all_events'), 
     url(r'^admin/', include(admin.site.urls)),
 )
