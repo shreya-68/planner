@@ -14,8 +14,10 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     #url(r'^create_plan/$', 'create_plan.views.index'),
-    url(r'^events/(?P<event_type_id>\d+)/(?P<event_id>\d+)/$', 'event.views.event_detail'),
-    url(r'^events/(?P<event_type_id>\d+)/$','event.views.event_type_detail'),
-    url(r'^events/$', 'event.views.all_events'), 
+    url(r'^event/(?P<event_type_id>\d+)/(?P<event_id>\d+)/$', 'event.views.event_detail'),
+    url(r'^event/(?P<event_type_id>\d+)/$','event.views.event_type_detail'),
+    url(r'^event/$', 'event.views.all_events'), 
+    #url(r'^plan/create/$','event.views.enter_date'),
+    url(r'^plan/create/(?P<year>\d+)/(?P<month>\d+)/(?P<day>\d+)/$','event.views.create_plan'),
     url(r'^admin/', include(admin.site.urls)),
 )

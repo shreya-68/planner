@@ -17,3 +17,6 @@ class calender(models.Model):
 	stime = models.TimeField('%H:%M')
 	venue = models.TextField()
 	date  = models.DateField()
+    
+
+

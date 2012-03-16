@@ -1,0 +1,9 @@
+{% if event_types %}
+    <ul>
+        {% for e in event_types %}
+            <li><a href="/event/{{e.id}}/">{{ e.get_event_type_display }}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No events!</p>
+{% endif %}

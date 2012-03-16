@@ -1,0 +1,46 @@
+{% if event_detail %}
+    {% if event_detail.Type.id == 1 %}
+        <h2>Lecture</h2>
+        <h4>Course: </h4><p>{{ event_detail.event.name }}</p>
+        <h4>Time: </h4><p>{{ event_detail.event.datetime }}</p>
+        <h4>Slot: </h4><p>{{ event_detail.slot }}</p>
+        <h4>Duration: </h4><p>{{ event_detail.event.duration }} hrs</p>
+    
+    {% else %}
+        {% if event_detail.Type.id == 2 %}
+        <h2>Project/Assignment</h2>
+        <h4>Course: </h4><p>{{ event_detail.course }}</p>
+        <h4>Name: </h4><p>{{ event_detail.event.name }}</p>
+        <h4>Time: </h4><p>{{ event_detail.event.datetime.time }}</p>
+        <h4>Due date: </h4><p>{{ event_detail.event.datetime.date }}</p>
+        <h4>Duration: </h4><p>{{ event_detail.event.duration }} hrs</p>
+        <h4>This much is done: </h4><p>{{ event_detail.event.complete }}</p>
+        <h4>Diffculty: </h4><p>{{event_detail.user_difficulty}}</p>
+        
+        {% else %}
+            {% if event_detail.Type.id == 4 %}
+            <h2>Club Activity</h2>
+            <h4>Club name: </h4><p>{{ event_detail.club_name }}</p>
+            <h4>Activity: </h4><p>{{ event_detail.event.name }}</p>
+            <h4>Time: </h4><p>{{ event_detail.event.datetime.time }}</p>
+            <h4>Venue: </h4><p>{{ event_detail.event.venue }}</p>
+            <h4>Duration: </h4><p>{{ event_detail.event.duration }} hrs</p>
+            <h4>This much is done: </h4><p>{{ event_detail.event.complete }}</p>
+        
+            <h4>Diffculty: </h4><p>{{event_detail.user_difficulty}}</p>
+            {% else %}
+                {% if event_detail.Type.id == 5 %}
+                <h2>Other Activity</h2>
+                <h4>Activity: </h4><p>{{ event_detail.event.name }}</p>
+                <h4>Time: </h4><p>{{ event_detail.event.datetime.time }}</p>
+                <h4>Venue: </h4><p>{{ event_detail.event.venue }}</p>
+                <h4>Duration: </h4><p>{{ event_detail.event.duration }} hrs</p>
+                <h4>This much is done: </h4><p>{{ event_detail.event.complete }}</p>
+        
+        <!--<h4>Diffculty: </h4><p>{{event_detail.user_difficulty}}</p>-->
+                 {% endif %}
+            {% endif %}
+        {% endif %}
+
+    {% endif %}
+{% endif %}
