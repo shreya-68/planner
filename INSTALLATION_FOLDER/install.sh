@@ -1,0 +1,40 @@
+#####################################################################################3
+#this is for installing python on your pc the folder should have the name as python and the version of python should be 2.7
+mediadir=`pwd`;
+cd ;
+installdir=`pwd`;
+cp -R $mediadir $installdir/SEN;
+cd ;
+cd SEN;
+cd python;
+./configure;
+    make;
+    make test;
+su -c 'make install';
+##################################################################################33
+#after installing python we will install Django in our system it should be in  the same directory as that of python directory with the name as django
+#cd ..;
+cd Django;
+python setup.py install;
+cd ..;       #will bring you back to the sen directory
+#######################################################################################################333
+# for installing psycopg2
+pwd;
+cd psycopg2;
+easy_install psycopg2;
+cd ..;
+cd Django;
+###############################################################################3
+#after seting up Django i will instsall my web site in an appropriate folder
+django-admin startproject sen;
+cd ..;
+cp -fR sen Django;
+echo "web site has been sucessfully loaded"; #will indicate that site has completed the task sucessfully
+##################################################################################33333333
+# this is for setting up your postgres server
+cd sen;
+#initdb -D $cur/data;
+#spostgres -D $cur/data 
+./manage.py syncdb;
+./manage.py runserver;
+

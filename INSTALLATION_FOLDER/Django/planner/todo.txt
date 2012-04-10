@@ -1,0 +1,23 @@
+create plan algo: event.views
+provide links to 'homepage'
+###form for add_event
+page for view event
+planner page
+discussion forum pages integrate and link
+work on: todo, blog
+left: news feeds, reminders, sms
+shivanshu: groups
+check flow
+docs
+
+=====================
+
+month view:
+events for particular date
+1. count of events
+
+week view:
+1. display header of events
+
+day view:
+brief and header both

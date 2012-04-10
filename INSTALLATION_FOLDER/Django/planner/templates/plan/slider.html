@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+    <style type="text/css">
+    #slider { margin: 10px; }
+	#demo-frame > div.demo { padding: 10px !important; };
+	</style>
+  <script>
+	$(function() {
+		$( "#slider-range" ).slider({
+			range: true,
+			min: 0,
+			max: 288,
+            values: [ {{ time1 }}, 42 ],
+			slide: function( event, ui ) {
+			var x=ui.values[0];
+			var y=ui.values[1];
+			var min1=x%12;
+			var hr1=(x-min1)/12;
+			min1=min1*5;
+			var min2=y%12;
+			var hr2=(y-min2)/12;
+			min2=min2*5;
+			
+				$( "#time" ).val("FROM: " + hr1 +":" + min1+ "  TO: " + hr2 + ":" + min2 );
+			}
+		});
+	    
+		var x=$( "#slider-range" ).slider( "values", 0 );
+		var y=$( "#slider-range" ).slider( "values", 1 );
+		var min1=x%12;
+		var hr1=(x-min1)/12;
+		min1=min1*5;
+		var min2=y%12;
+		var hr2=(y-min2)/12;
+		min2=min2*5;
+		$( "#time" ).val( "FROM: " + hr1 +":" + min1+ "  TO: " + hr2 + ":" + min2 );
+	});
+	</script>
+</head>
+<body style="font-size:150%; margin-left:2%; margin-top:42%;">
+
+
+<div id="slider-range"></div>
+<p> {{ event_detail.event.start_time }}</p>
+<p> {{ event_detail.event.end_time }}</p>
+<p>
+	<label for="time">TIME RANGE:</label>
+	<input type="text" id="time" style="border:0; color:#f6931f; font-weight:bold;" />
+</p>
+
+
+
+
+</body>
+</html>

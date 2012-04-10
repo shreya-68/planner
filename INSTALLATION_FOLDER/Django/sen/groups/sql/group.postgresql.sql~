@@ -1,0 +1,1 @@
+insert into groups_group (agenda,groupadmin) VALUES ('maula mere maula',200901017);

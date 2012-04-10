@@ -1,0 +1,102 @@
+/************************************************************************************
+RESET
+*************************************************************************************/
+html, body, address, blockquote, div, dl, form, h1, h2, h3, h4, h5, h6, ol, p, pre, table, ul,
+dd, dt, li, tbody, td, tfoot, th, thead, tr, button, del, ins, map, object,
+a, abbr, acronym, b, bdo, big, br, cite, code, dfn, em, i, img, kbd, q, samp, small, span,
+strong, sub, sup, tt, var, legend, fieldset, figure {
+    margin: 0;
+    padding: 0;
+}
+
+img, fieldset {
+    border: 0;
+}
+
+/* set html5 elements to block */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { 
+    display: block;
+}
+
+h1,h2,h3,h4,h5,h6 { font-weight: normal; }
+
+body {
+    background: #FFF;
+    font: 14px Segoe UI, Arial, Sans-Serif;
+    color: #184F95;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+    color: #FFF;
+}
+a:hover {
+    text-decoration: none;
+    text-shadow: 0 1px 0 #999;
+}
+
+#body-wrap {
+    margin: 64px 128px;
+    }
+
+#header { margin-bottom: 48px; }
+#logo h1 { font-size: 48px; font-weight: normal; }
+#logo h1 a { color: #184F95; }
+#logo h1 a:hover { text-decoration: none; }
+#logo h2 { font-size: 14px; line-height: 16px; font-weight: normal; }
+
+
+ul.lecture li.lec-block { list-style: none; float: left; height: 700px; background: #FFFFF; margin: 0 8px 8px 0; position: relative; }
+ul.lecture li.lec-block-full { width: 1600px; }
+ul.lecture li.lec-bg-green { background: #FFFFF; }
+
+ul.inner-block li.block-s{ list-style: none; float: left; height: 64px; margin: 2px; position: relative;}
+ul.inner-block li.block-sfull{ width: 224px;}
+
+ul.inner-block li.block-r{ list-style: none; float: left; height: 164px; margin: 2px; position: relative;}
+ul.inner-block li.block-rfull{width: 224;}
+
+ul.inner-block li.block-new-row { clear: left; }               
+
+ul.inner-block li.block-sblue{background: #A7E9EB;}
+ul.inner-block li.block-sgrey{background: #949D9D;}
+ul.inner-block li.block-spink{background: #F66DD8;}
+/*ul.lecture li.block-half { width: 152px; }
+ul.lecture li.block-new-row { clear: left; }               
+ul.lecture li.bg-teal { background: #45A4AC; }
+ul.lecture li.bg-purple { background: #494AA8; }
+ul.lecture li.bg-magenta { background: #741763; }
+ul.lecture li.bg-orange { background: #E2A01A; }
+*/
+
+.block-sfull .textstyle{color:#FFFFFF; font-size: 26px; text-align:center; margin-top:18px;}
+
+.lec-block-full .lecture-time{margin-left: 35%; color: #6A6F6F; font-size:48px; }
+.lec-block-full .block-background { position: absolute; width: 312px; height: 152px; overflow: hidden; }
+.lec-block-full .block-background img { width: 312px; height: 152; }
+.lec-block-full .block-content-bottom { position: absolute; bottom: 0; width: 312px; height: 52px; background: #CD432D; }
+.lec-block-full .block-content-bottom .inner { margin: 6px 12px; overflow: hidden; }  /*margin for the bottom*/
+.lec-block-full .block-content-full { margin: 12px 12px; overflow: hidden; }
+.lec-block-full .block-content-full .date { float: left; width: 72px; margin-right: 8px; }
+.lec-block-full .block-content-full .date .date-day { font-size: 60px; line-height: 64px; }
+.lec-block-full .block-content-full .date .date-month { text-transform: uppercase; }
+.lec-block-full .block-content-full .content { height: 100px; overflow: hidden; }
+.lec-block-full .footnote { position: absolute; left: 12px; bottom: 12px; font-size: 14px; }
+.lec-block-full .block-icon { width: 64px; height: 64px; position: absolute; left: 36px; top: 36px;}
+.lec-block-full .app-title { position: absolute; left: 128px; top: 40px; font-size: 40px; width: 160px; }
+.lec-block-full .block-footnote { position: absolute; bottom: 0px; height:24px; padding: 4px 12px; width: 288px; font-size: 14px; background: #CD432D; }
+.lec-block-full .block-content-full h2 { margin-bottom: 8px; }
+
+
+
+.block-half .block-icon { width: 64px; height: 64px; margin: 36px auto 0; }
+.block-half .footnote { position: absolute; left: 12px; bottom: 12px; font-size: 14px; }
+
+.post-title { font-size: 16px; width: 248px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; }
+.post-sub-title { font-size: 12px; width: 248px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; }
+.post-comments { position: absolute; right: 12px; bottom: 8px; }
+
+ul.list-link li { padding-left: 24px; line-height: 20px; background: url(images/list-bullet.png) no-repeat 8px center; }
+
+.page2{ margin: 640px 0px;}

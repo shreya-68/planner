@@ -82,6 +82,8 @@ STATICFILES_FINDERS = (
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
+AUTH_PROFILE_MODULE = 'login.UserProfile'
+
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '!os$1os2&)+=yfh0fl&)_&bivk77#a1qf444)%0bn^#%3j3+e8'
 
@@ -93,9 +95,10 @@ TEMPLATE_LOADERS = (
 )
 
 MIDDLEWARE_CLASSES = (
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfResponseMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
 )
@@ -116,14 +119,29 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-#    'planner_input',
     'event',
-    # Uncomment the next line to enable the admin:
-    'django.contrib.admin'
+    'groups',
+    'schedule',
+    'forum',
+    'usrper',
+    # comment the next line to disable the admin:
+    'django.contrib.admin',
+    'django.contrib.comments'
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.core.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.static",
+    "django.core.context_processors.request",
+    "django.contrib.auth.context_processors.auth",
+)
+
+FIRST_DAY_OF_WEEK = 1 # Monday
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error.

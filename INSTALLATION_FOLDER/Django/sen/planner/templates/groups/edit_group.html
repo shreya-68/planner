@@ -1,0 +1,463 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Groups</title>
+	<style>
+	*{margin:0; padding:0;}
+body
+{
+	font-family:Lucida Grande, Helvetica, Arial, sans-serif;
+	background: #eee url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAMAAAC6sdbXAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF3d3d////riJKgAAAAAJ0Uk5T/wDltzBKAAAAFUlEQVR42mJgBAEGGMmAxAYCgAADAAGGABmnk/7aAAAAAElFTkSuQmCC);
+}
+#wrapper-group
+{
+	position: absolute;
+	padding:30px;
+	width:300px;
+	margin-top: 200px;
+}
+#wrapper-add
+{
+	position: absolute;
+	padding:30px;
+	width:300px;
+	margin-top: 200px;
+	margin-left:80%;
+}
+	p
+	{color:#fff; padding:10px 0; text-align:center;}
+	.nav{}
+	#wrapper a, #footer a{color:#e8914c; text-decoration:none; border-bottom:1px dotted #e8914c;}
+	#wrapper a:hover, #footer a:hover{color:#eab209; border-bottom:1px dotted #eab209;}
+
+	#footer{margin-top:20px; text-transform:uppercase; font-size:11px; letter-spacing:1px;}
+	#footer p{color:rgba(255,255,255,.5);}
+
+
+	#vertical-ticker{
+	height:425px;
+	overflow:hidden;
+	margin:0; 
+	padding:2px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+    -moz-box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444;
+	-webkit-box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444;
+	box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444;       
+	}
+
+	#vertical-ticker li
+	{
+		padding:35px 20px;
+		margin: 5px;
+		display:block;
+		background:#FAF9BC;
+		color:#333;
+		border-bottom:1px solid #ddd;
+		border-right:1px solid #ddd;
+		border-left:1px solid #ddd;
+		text-align:center;
+		font-size:25px;
+		font-weight:bold;
+		font-family: Helvetica Neue, times, serif;
+		-moz-border-radius: 3px;
+		-webkit-border-radius: 3px;
+		border-radius: 3px;
+
+        -moz-box-shadow: 0 1px 1px #000 inset, 0 1px 0 #444;
+		-webkit-box-shadow: 0 1px 1px #000 inset, 0 1px 0 #444;
+		box-shadow: 0 1px 1px #000 inset, 0 1px 0 #444;      
+	}
+	
+	
+	
+	#vertical-ticker li #accept-decline{
+		position: absolute;
+		padding:0 ;
+		
+		display:block;
+		background:#56BCEC;
+		color:#FFFFFF;
+		border-bottom:1px solid #ddd;
+		border-right:1px solid #ddd;
+		border-left:1px solid #ddd;
+		text-align:center;
+		font-size:12px;
+		font-weight:bold;
+		font-family: Helvetica Neue, times, serif;
+		-moz-border-radius: 3px;
+		-webkit-border-radius: 3px;
+		border-radius: 3px;
+
+        -moz-box-shadow: 0 1px 1px #000 inset, 0 1px 0 #56BCEC;
+		-webkit-box-shadow: 0 1px 1px #000 inset, 0 1px 0 #56BCEC;
+		box-shadow: 0 1px 1px #000 inset, 0 1px 0 #56BCEC; 
+	
+	}
+		
+		#create-group
+		{	
+		position: absolute;
+		padding:15px 15px ;
+		
+		display:block;
+		background:#56BCEC;
+		color:#FFFFFF;
+		border-bottom:1px solid #ddd;
+		border-right:1px solid #ddd;
+		border-left:1px solid #ddd;
+		text-align:center;
+		font-size:20px;
+		font-weight:bold;
+		font-family: Helvetica Neue, times, serif;
+		-moz-border-radius: 3px;
+		-webkit-border-radius: 3px;
+		border-radius: 3px;
+
+        -moz-box-shadow: 0 1px 1px #000 inset, 0 1px 0 #56BCEC;
+		-webkit-box-shadow: 0 1px 1px #000 inset, 0 1px 0 #56BCEC;
+		box-shadow: 0 1px 1px #000 inset, 0 1px 0 #56BCEC;    }
+	
+	input:focus,textarea:focus {
+		  outline: none;
+		}
+		
+		
+				
+		.cf:before,
+		.cf:after {
+		  content:"";
+		  display:table;
+		}
+		
+		.cf:after {
+		  clear:both;
+		}
+		
+		.cf {
+		  zoom:1;
+		}
+		  
+		
+		header {
+		  padding: 0;
+		  
+		  
+		}
+		
+		nav ul {
+		  margin: 0;
+		  list-style: none;
+		  position: relative;
+		  padding:15px 15px ;
+		  color:#FFFFFF;
+		  border-bottom:1px solid #ddd;
+		  border-right:1px solid #ddd;
+		  border-left:1px solid #ddd;
+		  text-align:center;
+		  font-size:20px;
+		  font-family: Helvetica Neue, times, serif;
+		  -moz-border-radius: 3px;
+		  -webkit-border-radius: 3px;
+		  border-radius: 3px;
+
+          -moz-box-shadow: 0 1px 1px #000 inset, 0 1px 0 #56BCEC;
+		  -webkit-box-shadow: 0 1px 1px #000 inset, 0 1px 0 #56BCEC;
+		  box-shadow: 0 1px 1px #000 inset, 0 1px 0 #56BCEC;
+		  float: right;
+		  background: #56BCEC;
+		    
+		}
+		
+		nav li {
+		  float: left;          
+		}
+		
+		nav #login {
+		  border-right: 1px solid #ddd;
+		    
+		}
+		
+		nav #login-trigger{
+		  display: inline-block;
+		  *display: inline;
+		  *zoom: 1;
+		  height: 25px;
+		  line-height: 25px;
+		  font-weight: bold;
+		  padding:0;
+		  text-decoration: none;
+		  color: #ffffff;
+		  text-shadow: 0 1px 0 #fff; 		
+		  -moz-border-radius: 3px 3px 3px 3px;
+		  -webkit-border-radius: 3px 3px 3px 3px;
+		  border-radius: 3px 3px 3px 3px;
+		}
+		
+				
+		nav #login-content {
+		  display: none;
+		  position: absolute;
+		  top: 50px;
+		  right: 0;
+		  z-index: 999;    
+		  background: #56BCEC;		  
+		  padding: 15px;
+		  -moz-border-radius: 3px 0 3px 3px;
+		  -webkit-border-radius: 3px 0 3px 3px;
+		  border-radius: 3px 0 3px 3px;
+		}
+		
+		nav li #login-content {
+		  right: 0;
+		  width: 350px;  
+		}
+		
+		/*--------------------*/
+		
+		#inputs input {
+		  background: #F3F6BC;
+		  padding: 6px 5px;
+		  margin: 5px 0 5px 0;
+		  width: 238px;
+		  
+		  -moz-border-radius: 10px;
+		  -webkit-border-radius: 10px;
+		  border-radius: 10px;
+		  
+		}
+		
+		#inputs input:focus {
+		  background-color: #fff;
+		  
+		  outline: none;
+		  
+		}
+		
+		/*--------------------*/
+		
+		#login #actions {
+		  margin: 10px 0 0 0;
+		}
+		
+		#login #submit {		
+		  background-color: #d14545;
+		  background-image: -webkit-gradient(linear, left top, left bottom, from(#e97171), to(#d14545));
+		  background-image: -webkit-linear-gradient(top, #e97171, #d14545);
+		  background-image: -moz-linear-gradient(top, #e97171, #d14545);
+		  background-image: -ms-linear-gradient(top, #e97171, #d14545);
+		  background-image: -o-linear-gradient(top, #e97171, #d14545);
+		  background-image: linear-gradient(top, #e97171, #d14545);
+		  -moz-border-radius: 3px;
+		  -webkit-border-radius: 3px;
+		  border-radius: 3px;
+		  text-shadow: 0 1px 0 rgba(0,0,0,.5);
+		  -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+		  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+		  box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;    
+		  border: 1px solid #7e1515;
+		  float: left;
+		  height: 30px;
+		  padding: 0;
+		  width: 100px;
+		  cursor: pointer;
+		  font: bold 14px Arial, Helvetica;
+		  color: #fff;
+		}
+		
+		#login #submit:hover,
+		#login #submit:focus {		
+		  background-color: #e97171;
+		  background-image: -webkit-gradient(linear, left top, left bottom, from(#d14545), to(#e97171));
+		  background-image: -webkit-linear-gradient(top, #d14545, #e97171);
+		  background-image: -moz-linear-gradient(top, #d14545, #e97171);
+		  background-image: -ms-linear-gradient(top, #d14545, #e97171);
+		  background-image: -o-linear-gradient(top, #d14545, #e97171);
+		  background-image: linear-gradient(top, #d14545, #e97171);
+		}	
+		
+		#login #submit:active {		
+		  outline: none;
+		  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+		  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+		  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;		
+		}
+		
+		#login #submit::-moz-focus-inner {
+		  border: none;
+		}
+		
+		#login label {
+		  float: right;
+		  line-height: 30px;
+		}
+		
+		#login label input {
+		  position: relative;
+		  top: 2px;
+		  right: 2px;
+		}
+		
+		#about {
+			margin: 15px;
+		}
+		
+		#about a {
+			color: #555;
+		}
+		
+		#page {
+	background:#ffffff;
+	position: absolute;
+	margin-left: 400px;		
+	margin-top: 10px;
+	font-size:12px;
+	font-family: "Lucida Grande", Arial, Helvetica, sans-serif;
+	height: 800px;
+	width: 1000px;
+	-moz-border-radius: 3px;	
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	border:10px solid #56BCEC	
+	}
+	UL.mytabs {
+	position: relative;
+	z-index: 2;
+	
+	}
+	UL.mytabs, UL.mytabs LI {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	}
+	UL.mytabs LI { padding: 5px 5px 0 5px; }
+	UL.mytabs LI A {
+	float: left;
+	padding: 7px;
+	border: 1px solid #CCCCCC;
+	border-bottom: 1px solid #E0E0E0;
+	background: #f0f0f0;
+	text-decoration: none;
+	color: #333333;
+	height: 22px;
+	}
+	UL.mytabs LI A:HOVER, UL.mytabs LI.current A {
+	background: #FFFFFF;	
+	}
+	UL.mytabs LI.current A {
+	font-weight: bold;
+	font-size: 14px;
+	border-bottom: 1px solid #FFFFFF;
+	}
+	.mytabs-container {
+	position: relative;
+	z-index: 1;
+	clear: both;
+	border: 1px solid #E0E0E0;
+	padding: 10px;
+	top: -1px;
+	}
+
+	A { color: #0A8ECC; }
+	A:HOVER {
+	text-decoration: none;
+	color: #8FCB2F;
+	}	
+
+	</style>
+
+		
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<script>
+		  $(document).ready(function(){
+				$('#login-trigger').click(function(){
+					$(this).next('#login-content').slideToggle();
+					$(this).toggleClass('active');					
+					
+					if ($(this).hasClass('active')) $(this).find('span').html('&#x25B2;')
+						else $(this).find('span').html('&#x25BC;')
+					})
+		  });
+	</script>
+	
+	
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.totemticker.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#vertical-ticker').totemticker({
+				row_height	:	'100px',
+				next		:	'#ticker-next',
+				previous	:	'#ticker-previous',
+				stop		:	'#stop',
+				start		:	'#start',
+				mousestop	:	true,
+			});
+		});
+	</script>
+	
+	<script type="text/javascript" src="./jquery.js"></script>
+    <script type="text/javascript">
+	var containerId = '#tabs-container';
+	var tabsId = '#tabs';
+
+	$(document).ready(function(){
+	// Preload tab on page load
+	if($(tabsId + ' LI.current A').length > 0){
+		loadTab($(tabsId + ' LI.current A'));
+	}
+	
+    $(tabsId + ' A').click(function(){
+    	if($(this).parent().hasClass('current')){ return false; }
+    	
+    	$(tabsId + ' LI.current').removeClass('current');
+    	$(this).parent().addClass('current');
+    	
+    	loadTab($(this));    	
+        return false;
+    });
+	});
+
+	function loadTab(tabObj){
+    if(!tabObj || !tabObj.length){ return; }
+    $(containerId).addClass('loading');
+    $(containerId).fadeOut('fast');
+    
+    $(containerId).load(tabObj.attr('href'), function(){
+        $(containerId).removeClass('loading');
+        $(containerId).fadeIn('fast');
+    });
+	}
+	
+	</script>
+</head>
+<body>
+
+<div id="page">
+        <ul class="mytabs" id="tabs">
+            <li><a href="/groups/{{ gid }}/">HOME</a></li>
+            <li><a href="/tabs/tab2.html">EVENTS</a></li>
+            <li><a href="/groups/getmembers/{{ gid }}">MEMBERS</a></li>
+            <li class="current"><a href="/groups/edit/{{ gid }}">EDIT</a></li>
+		</ul>
+
+		<div class="mytabs-container" id="tabs-container">
+            Loading. Please Wait...
+		</div>
+        <div class="content">
+
+            <p><a href="/groups/delete_members/{{ gid }}/">Delete members</a></p>
+            <p><a href="/groups/send_request/{{ gid }}/">Add members</a></p>
+</div>
+
+</header>
+	
+</body>	
+</html>
+
+

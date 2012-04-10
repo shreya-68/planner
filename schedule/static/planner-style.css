@@ -1,0 +1,93 @@
+/************************************************************************************
+RESET
+*************************************************************************************/
+html, body, address, blockquote, div, dl, form, h1, h2, h3, h4, h5, h6, ol, p, pre, table, ul,
+dd, dt, li, tbody, td, tfoot, th, thead, tr, button, del, ins, map, object,
+a, abbr, acronym, b, bdo, big, br, cite, code, dfn, em, i, img, kbd, q, samp, small, span,
+strong, sub, sup, tt, var, legend, fieldset, figure {
+    margin: 0;
+    padding: 0;
+}
+
+img, fieldset {
+    border: 0;
+}
+#page-head{
+	position:absolute;
+	border-top:1px dashed #000000;
+	border-bottom:1px dashed #000000;
+	margin-top: 1%;
+	margin-left: 40%;	
+	font-weight:bold;
+	font-size:60px;
+	}
+
+/* set html5 elements to block */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { 
+    display: block;
+}
+
+h1,h2,h3,h4,h5,h6 { font-weight: normal; }
+
+body {color:#000;
+	
+	margin:0;
+	overflow:auto;
+  font-family:Lucida Grande, Helvetica, Arial, sans-serif;
+	background: #eee url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAMAAAC6sdbXAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF3d3d////riJKgAAAAAJ0Uk5T/wDltzBKAAAAFUlEQVR42mJgBAEGGMmAxAYCgAADAAGGABmnk/7aAAAAAElFTkSuQmCC);
+}
+
+
+a {
+    text-decoration: none;
+    outline: none;
+    color: #FFF;
+}
+a:hover {
+    text-decoration: none;
+    text-shadow: 0 1px 0 #999;
+}
+
+#body-wrap {
+    margin: 128px 128px;
+    }
+
+
+
+.month-date{font-size:150%; text-align:center;}
+ul.inner-block li.block-s{ list-style: none; float: left; height: 40px; margin: 2px; position: relative; width: 180px; background: -webkit-gradient(linear, 0% 0%, 0% 80%, from(#ADAEAF), to(#E7E8EB)); 
+		background: -moz-linear-gradient(0% 80% 90deg,#E7E8EB, #ADAEAF); 	  
+		-webkit-border-radius: 0 0 10px 10px;	-moz-border-radius: 0 0 10px 10px;	border-radius: 0 0 10px 10px;
+		text-align:center; }
+.block-s .textstyle{margin-top:2%; font-size:150%;}
+
+ul.inner-block li.block-r{ list-style: none; float: left; height: 150px; margin: 2px; position: relative; -webkit-border-radius: 0 15px 0 15px;	-moz-border-radius: 0 15px 0 15px;	border-radius: 0 15px 0 15px; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#7C8DF6), to(#fff)); 
+		background: -moz-linear-gradient(0% 100% 90deg,#fff, #F2DEA8); 	width: 180px; text-align:center;}
+
+ul.inner-block li.block-new-row { clear: left; }               
+
+.block-r a{font-size:200%; text-decoration:none; margin-top:100px; line-height:75px; color:#0C18F6;}
+
+		
+.inner-block .block-r em {
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px; 		
+	/* -- CSS3 - create a background graident -- */
+	background: -webkit-gradient(linear, 0% 0%, 0% 40%, from(#EEE), to(#FFFFFF)); 
+	background: -moz-linear-gradient(0% 40% 90deg,#FFF, #EEE); 
+	/* -- CSS3 - add a drop shadow -- */
+	-webkit-box-shadow:0px 0 50px #ccc;
+	-moz-box-shadow:0px 0 50px #ccc; 
+	box-shadow:0px 0 50px #ccc;	
+	opacity:0.8;
+	width: 180px;	height: auto;	top:85px; position: absolute;	left: -15px;	text-align: center;	padding: 20px 12px 10px;	font-style: normal;	z-index: 2; display:none;}
+		
+#opac{opacity:0.3;}
+#active{background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#F9FC3D), to(#F3F4FE)); 
+		background: -moz-linear-gradient(0% 100% 90deg,#F3F4FE, #F9FC3D); }
+#active-inner{background:#494AA8;}
+
+.block-r .block-content-bottom { position: absolute; bottom: 0; width: 180px; height: 40px; background: #CD432D; -webkit-border-radius: 0 0 0 10px;	-moz-border-radius: 0 0 0 10px;	border-radius: 0 0 0 10px;}
+.block-r .block-content-bottom .inner{margin:10px; color:#fff;}
+

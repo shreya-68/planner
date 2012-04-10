@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<style>
+		body
+		{
+			margin: 0;
+		}     
+		header 
+		{	margin:0;	  padding: 8px 10%;	  border-bottom: 1px solid C1BFBF;	  background: #848282;	  height: 45px;
+		background: -webkit-gradient(linear, 0% 0%, 0% 80%, from(#ADAEAF), to(#E7E8EB)); 
+		background: -moz-linear-gradient(0% 80% 90deg,#E7E8EB, #ADAEAF); 	  
+		-webkit-border-radius: 0 0 10px 10px;	-moz-border-radius: 0 0 10px 10px;	border-radius: 0 0 10px 10px; }
+		
+		nav #short-link
+		{	float:left;	position:relative;	padding:2px;	height: 40px;	margin-left: 10px;	background:#ffffff;
+		background: -webkit-gradient(linear, 0% 0%, 0% 50%, from(#747575), to(#DDDFE1)); 
+		background: -moz-linear-gradient(0% 50% 90deg,#DDDFE1, #747575); 
+		-moz-border-radius: 15px;	-webkit-border-radius: 15px;	border-radius: 15px; 
+		text-align:center;	font-size:20px;
+		-webkit-box-shadow:0px 0 10px #9D9E9F;	-moz-box-shadow:0px 0 10px #9D9E9F; 	box-shadow:0px 0 10px #9D9E9F;	}	
+		
+		nav #short-link a{	text-decoration: none;	margin-top:10px;	color:#000000;	}		
+		nav #short-link a:hover{	background:#ffffff;	color:#FFFFFF;	}
+		
+		#date {font-size:200%; text-align:center;}
+		</style>
+		
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}jquery.horizontal.scroll.css" />
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}difficulty.css" />
+	<!--	<link href='http://fonts.googleapis.com/css?family=Dancing+Script:regular,bold&v1' rel='stylesheet' type='text/css'>-->
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+        <script src="{{ STATIC_URL }}jquery.horizontal.scroll.js" type="text/javascript"></script>
+        <link href="{{ STATIC_URL }}jquery-ui.css" rel="stylesheet" type="text/css"/>
+        <script src="{{ STATIC_URL }}widget.js"></script>
+        <script src="{{ STATIC_URL }}accordion.js"></script>
+		
+
+		<script >
+		
+							if ($.browser.mozilla || $.browser.msie) {
+					$('h1').css('background', '#ffffff');
+					$('h1').css('color', '#d5d5d5');
+					$('#createdby').css('background', '#ffffff');
+					$('#createdby').css('color', '#d5d5d5');
+				}
+				
+				$(function() {
+				$( ".accordion" ).accordion({
+				collapsible: true,
+				autoHeight: false,
+				active:false,
+				event: "mouseover"		}
+				);
+		
+				});
+				$(function() {
+				$('#horiz_container_outer').horizontalScroll();});
+				
+				
+
+			
+		
+		</script>
+		
+		
+		
+				
+	</head>
+	<body>
+	<header class="cf">
+	<nav>
+	<div id="short-link">
+		<a href="/plan/" ><div style="margin-top:10px;">PLANNER	</div></a>
+	</div>
+	<div id="short-link">
+		<a href="/calendar/month/" ><div style="margin-top:10px;">CALENDER	</div></a>
+	</div>
+	<div id="short-link">
+		<a href="/groups/" ><div style="margin-top:10px;">GROUPS	</div></a>
+	</div>
+	<div id="short-link">
+		<a href="/forum/" ><div style="margin-top:10px;">FORUM	</div></a>
+	</div>
+	<div id="short-link">
+		<a href="/home/" ><div style="margin-top:10px;">HOME	</div></a>
+	</div>
+	<div id="short-link">
+		<a href="/logout/" ><div style="margin-top:10px;">LOGOUT	</div></a>
+	</div>
+	</nav>
+
+
+</header>
+<div id="date"> {{ date }}</div>
+	<ul id="horiz_container_outer">
+		<li id="horiz_container_inner">
+			<ul id="horiz_container">
+			<br /><br />	
+					
+    {% for each_event, margin_left, width in lst %}
+				<li>
+                <div class="accordion" style="width:{{ width}}px; position:fixed; margin-left:{{ margin_left }}px; background-color:F9FC3D;">
+                    <header><a href="#">Section</a></header>
+                            <div id="difficult{{ each_event.event.priority }}">
+								<p>   Name: {{ each_event.event.name }}
+								</p>
+                                <p> Date and Time: {{ each_event.event.datetime }}</p>
+                                <p> Venue: {{ each_event.event.venue }}</p>
+                            
+                                <a href="/event/delete/{{ each_event.event.id }}"><button><img  src="{{ STATIC_URL }}trash.png" alt="Edit" width="20" height="20" style="margin-left:10%"/></button> </a>
+                                <a href="/edit_event/{{ each_event.event.id }}"><button> <img src="{{ STATIC_URL }}wrench.png" alt="Delete" width="20" height="20" style="margin-left:10%"/> </button></a>
+
+							</div>
+					</div>
+				</li>
+                {% endfor %}
+                {% if other_events %}
+    {% for name, time, margin_left, width in other_events %}
+				<li>
+                <div class="accordion" style="width:{{ width}}px; position:fixed; margin-left:{{ margin_left }}px; background-color:F9FC3D;">
+                    <header><a href="#">{{ name }}</a></header>
+                            <div id="difficult5">
+								<p>       Name: {{ name }}
+                                </p>
+                                <p> Time: {{ time }}</p>
+                            
+
+							</div>
+					</div>
+				</li>
+                {% endfor %}
+                {% endif %}
+			</ul>
+		</li>		
+	</ul>			
+	
+						
+	<div id="scrollbar">
+		<a id="left_scroll" class="mouseover_left" href="#"></a>
+			<div id="track">
+				<div id="dragBar">
+				</div>
+			</div>
+		<a id="right_scroll" class="mouseover_right" href="#"></a>
+	</div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<h4>My Entries</h4>
+<form action = "{% url schedule.views.view_day year month day %}" method="GET"> {% csrf_token %}
+
+    {{ entries.management_form }}
+
+    {% for entry in entries.forms %}
+        {{ entry.id }}
+        <div class = "entry">
+            <div class = "del">Delete {{ entry.DELETE }} </div>
+            <div id="inpl">
+                <p>Title: {{ entry.name }}</p>
+                <p>Start Time: {{ entry.start_time }}</p>
+            </div>
+            <p>Remind: {{ entry.remind }}</p>
+            {{ entry.description }}
+        </div>
+    {% endfor %}
+
+    <input type="submit" value="Save" /></form>

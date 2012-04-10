@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Groups</title>
+	<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+	<style>
+	*{margin:0; padding:0;}
+body
+{	margin: 0 ; 
+	
+	font-family:Lucida Grande, Helvetica, Arial, sans-serif;
+	background: #eee url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAMAAAC6sdbXAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF3d3d////riJKgAAAAAJ0Uk5T/wDltzBKAAAAFUlEQVR42mJgBAEGGMmAxAYCgAADAAGGABmnk/7aAAAAAElFTkSuQmCC);
+}
+<!--	p
+	{color:#fff; padding:10px 0; text-align:center;}
+	.nav{}
+	#wrapper a, #footer a{color:#e8914c; text-decoration:none; border-bottom:1px dotted #e8914c;}
+	#wrapper a:hover, #footer a:hover{color:#eab209; border-bottom:1px dotted #eab209;}
+
+	#footer{margin-top:20px; text-transform:uppercase; font-size:11px; letter-spacing:1px;}
+	#footer p{color:rgba(255,255,255,.5);}
+-->
+
+	#wrapper
+	{width:1600px;
+	position:absolute;
+	height:100%;}
+		
+		#create-group
+		{	position: absolute;  padding:15px 15px;  background:#56BCEC;  color:#FFFFFF;  border:1px solid #ddd;  text-align:center;  font-size:20px;  font-weight:bold;  font-family: Helvetica Neue, times, serif;}
+	
+		input:focus,textarea:focus {outline: none;}
+		header {  padding: 0; }
+		
+		nav ul {  margin: 0;  list-style: none;  position: relative;  padding:15px 15px ;  color:#FFFFFF;  text-align:center;  font-size:20px;  font-family: Helvetica Neue, times, serif;  float: right;  background: #56BCEC;   }
+		nav li {  float: left;          }		
+		nav #login {  border-right: 1px solid #ddd;		}
+		nav #login-trigger{	  height: 25px;  padding:0;  text-decoration: none;  color: #ffffff;  text-shadow: 0 1px 0 #fff; }		
+		nav #login-content {  display: none;  position: absolute;  top: 50px;  right: 0;  z-index: 999;   background: #56BCEC;	 padding: 15px;}		
+		nav li #login-content {  right: 0;  width: 350px;  }
+
+		#inputs input {  background: #ffffff;  padding: 10px 8px;  margin: 5px 0 5px 0;  width: 238px;  }		
+		#inputs input:focus {  outline: none;		  }
+		
+		#login #submit {background-color: #d14545;  float: left;  height: 30px;  padding: 2px;;  width: 100px;  font: bold 14px Arial, Helvetica; color: #fff;}		
+		
+		header 
+		{	margin:0;	  padding: 8px 10%;	  border-bottom: 1px solid C1BFBF;	  background: #848282;	  height: 45px;
+		background: -webkit-gradient(linear, 0% 0%, 0% 80%, from(#ADAEAF), to(#E7E8EB)); 
+		background: -moz-linear-gradient(0% 80% 90deg,#E7E8EB, #ADAEAF); 	  
+		-webkit-border-radius: 0 0 10px 10px;	-moz-border-radius: 0 0 10px 10px;	border-radius: 0 0 10px 10px; }
+		
+		nav #short-link
+		{	float:left;	position:relative;	padding:2px;	height: 40px;	margin-left: 10px;	background:#ffffff;
+		background: -webkit-gradient(linear, 0% 0%, 0% 50%, from(#747575), to(#DDDFE1)); 
+		background: -moz-linear-gradient(0% 50% 90deg,#DDDFE1, #747575); 
+		-moz-border-radius: 15px;	-webkit-border-radius: 15px;	border-radius: 15px; 
+		text-align:center;	font-size:20px;
+		-webkit-box-shadow:0px 0 10px #9D9E9F;	-moz-box-shadow:0px 0 10px #9D9E9F; 	box-shadow:0px 0 10px #9D9E9F;	}	
+		
+		nav #short-link a{	text-decoration: none;	margin-top:10px;	color:#000000;	}		
+		nav #short-link a:hover{	background:#ffffff;	color:#FFFFFF;	}
+
+
+		
+	
+#forms { 
+		font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;  width: 50%;  margin: 50px 0 50px 0; margin-left:20%; padding: 50px 60px;  overflow: auto;  color: #3e4a49;
+		background-color: #f5eedb;  background: -webkit-gradient(linear, 0% 0%, 0% 50%, from(#f5eedb), to(#fff));   background: -moz-linear-gradient(0% 50% 90deg,#fff, #f5eedb); 
+		border-radius: 10px;  -moz-border-radius: 10px;  -webkit-border-radius: 10px;    box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+		-moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);  -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+	}	
+
+		
+	UL.mytabs {	position: relative;	z-index: 2;	}
+	UL.mytabs, UL.mytabs LI {	margin: 0;	padding: 0;	list-style: none;	float: left;	}
+	UL.mytabs LI { padding: 5px 5px 0 5px; }
+	UL.mytabs LI A {	float: left;	padding: 7px;	border: 1px solid #CCCCCC;	border-bottom: 1px solid #E0E0E0;	background: #9d2e2c;	text-decoration: none;	color: #fff;	height: 22px;
+	}
+	UL.mytabs LI A:HOVER, UL.mytabs LI.current A {	background: #FFFFFF; color:#000000;		}
+	UL.mytabs LI.current A {	font-weight: bold;	font-size: 14px;	border-bottom: 1px solid #FFFFFF;	}
+	.mytabs-container {	position: relative;	z-index: 1;	clear: both;	border: 1px solid #E0E0E0;	padding: 10px;	top: -1px;	}
+
+	A { color: #0A8ECC; }
+	A:HOVER {	text-decoration: none;	color: #8FCB2F;	}	
+	
+	.scroll-pane { overflow: auto; width:270px; height:45%; float:left; margin-left:2px;  position:absolute;}
+	.scroll-pane1 { overflow: auto; width:270px; height:45%; float:left; margin-left:2px; position:absolute; margin-top:28%; }
+	.scroll-content { width:300px;float: left;}
+	.scroll-content-item { width: 200px; height: 100px; float: left; margin: 10px; font-size: 1em; line-height: 96px; text-align: center; }
+	* html .scroll-content-item { display: inline; } /* IE6 float double margin bug */
+	.scroll-bar-wrap { clear: left; padding: 0 1px 0 1px; margin: 0 -1px -1px -1px; }
+	.scroll-bar-wrap .ui-slider { background: none; border:0; height: 1.5em; margin: 0 auto;  }
+	.scroll-bar-wrap .ui-handle-helper-parent { position: relative; width: 100%; height: 100%; margin: 0 auto; }
+	.scroll-bar-wrap .ui-slider-handle { top:.2em; height: 1em; }
+	.scroll-bar-wrap .ui-slider-handle .ui-icon { margin: -8px auto 0; position: relative; top: 50%; }
+	.ui-widget-head { 
+	border: 1px solid #aaaaaa/*{borderColorHeader}*/;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#83BFFA), to(#FFFFFF)); 
+		background: -moz-linear-gradient(0% 100% 90deg,#FFF, #83BFFA); 
+
+	font-weight: bold; }
+	fieldset {
+  padding: 0;
+  margin: 5px;;
+  border: 2px solid #593131;
+  background: #eae1c0;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  width:220px;
+ 
+  
+}
+
+legend {
+  color: #fff;
+  background: #9d2e2c;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9em;
+  font-weight: bold;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  width: 9em;
+  border: 2px solid #593131;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+	</style>
+
+		
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<script>
+		  $(document).ready(function(){
+				$('#login-trigger').click(function(){
+					$(this).next('#login-content').slideToggle();
+					$(this).toggleClass('active');					
+				})
+		  });
+	</script>
+	<script>
+	$(function() {
+		//scrollpane parts
+		var scrollPane = $( ".scroll-pane" ),
+			scrollContent = $( ".scroll-content" );
+		
+		//build slider
+		var scrollbar = $( ".scroll-bar" ).slider({
+			slide: function( event, ui ) {
+				if ( scrollContent.width() > scrollPane.width() ) {
+					scrollContent.css( "margin-left", Math.round(
+						ui.value / 100 * ( scrollPane.width() - scrollContent.width() )
+					) + "px" );
+				} else {
+					scrollContent.css( "margin-left", 0 );
+				}
+			}
+		});
+		
+		//append icon to handle
+		var handleHelper = scrollbar.find( ".ui-slider-handle" )
+		.mousedown(function() {
+			scrollbar.width( handleHelper.width() );
+		})
+		.mouseup(function() {
+			scrollbar.width( "100%" );
+		})
+		.append( "<span class='ui-icon ui-icon-grip-dotted-vertical'></span>" )
+		.wrap( "<div class='ui-handle-helper-parent'></div>" ).parent();
+		
+		//change overflow to hidden now that slider handles the scrolling
+		scrollPane.css( "overflow", "hidden" );
+		
+		//size scrollbar and handle proportionally to scroll distance
+		function sizeScrollbar() {
+			var remainder = scrollContent.width() - scrollPane.width();
+			var proportion = remainder / scrollContent.width();
+			var handleSize = scrollPane.width() - ( proportion * scrollPane.width() );
+			scrollbar.find( ".ui-slider-handle" ).css({
+				width: handleSize,
+				"margin-left": -handleSize / 2
+			});
+			handleHelper.width( "" ).width( scrollbar.width() - handleSize );
+		}
+		
+		//reset slider value based on scroll content position
+		function resetValue() {
+			var remainder = scrollPane.width() - scrollContent.width();
+			var leftVal = scrollContent.css( "margin-left" ) === "auto" ? 0 :
+				parseInt( scrollContent.css( "margin-left" ) );
+			var percentage = Math.round( leftVal / remainder * 100 );
+			scrollbar.slider( "value", percentage );
+		}
+		
+		//if the slider is 100% and window gets larger, reveal content
+		function reflowContent() {
+				var showing = scrollContent.width() + parseInt( scrollContent.css( "margin-left" ), 10 );
+				var gap = scrollPane.width() - showing;
+				if ( gap > 0 ) {
+					scrollContent.css( "margin-left", parseInt( scrollContent.css( "margin-left" ), 10 ) + gap );
+				}
+		}
+		
+		//change handle position on window resize
+		$( window ).resize(function() {
+			resetValue();
+			sizeScrollbar();
+			reflowContent();
+		});
+		//init scrollbar size
+		setTimeout( sizeScrollbar, 10 );//safari wants a timeout
+	});
+	</script>
+	
+    <script type="text/javascript" src="{{ STATIC_URL }}jquery.js"></script>
+    <script type="text/javascript">
+	var containerId = '#tabs-container';
+	var tabsId = '#tabs';
+
+	$(document).ready(function(){
+	// Preload tab on page load
+	if($(tabsId + ' LI.current A').length > 0){
+		loadTab($(tabsId + ' LI.current A'));
+	}
+	
+    $(tabsId + ' A').click(function(){
+    	if($(this).parent().hasClass('current')){ return false; }
+    	
+    	$(tabsId + ' LI.current').removeClass('current');
+    	$(this).parent().addClass('current');
+    	
+    	loadTab($(this));    	
+        return false;
+    });
+	});
+
+	function loadTab(tabObj){
+    if(!tabObj || !tabObj.length){ return; }
+    $(containerId).addClass('loading');
+    $(containerId).fadeOut('fast');
+    
+    $(containerId).load(tabObj.attr('href'), function(){
+        $(containerId).removeClass('loading');
+        $(containerId).fadeIn('fast');
+    });
+	}
+	
+	</script>
+</head>
+<body>
+<header class="cf">
+<nav>
+	<div id="short-link">
+		<a href="/plan/" ><div style="margin-top:10px;">PLANNER	</div></a>
+	</div>
+	<div id="short-link">
+		<a href="/calendar/month/" ><div style="margin-top:10px;">CALENDER	</div></a>
+	</div>
+	<div id="short-link">
+		<a href="/groups/" ><div style="margin-top:10px;">GROUPS	</div></a>
+	</div>
+	<div id="short-link">
+		<a href="/forum/" ><div style="margin-top:10px;">FORUM	</div></a>
+	</div>
+	<div id="short-link">
+		<a href="/home/" ><div style="margin-top:10px;">HOME	</div></a>
+	</div>
+	<div id="short-link">
+		<a href="/logout/" ><div style="margin-top:10px;">LOGOUT	</div></a>
+	</div>
+</nav>
+<br />
+</header>
+<div id="wrapper">
+<nav>
+	<ul>
+		<li id="login">
+			<a id="login-trigger" href="#">
+				CREATE GROUP +
+			</a>
+			<div id="login-content">
+
+				<form action="/groups/addgroup/" method="post">
+					<div id="inputs">
+						<input id="text" type="text" name="groupname" placeholder="ENTER YOUR GROUP NAME" required> 
+						
+					</div>
+					<div id="actions">
+						<input type="submit" id="submit" value="CREATE">
+					</div>
+				</form>
+			</div>                     
+		</li>
+		
+	</ul>
+</nav>
+<div class="scroll-pane ui-widget ui-widget-head ui-corner-all" style="background:#ffffff;">
+	<fieldset>
+		<legend align="l">MY CURRENT GROUPS</legend>
+		<div class="scroll-content1">
+        {% if groups_exist %}
+		   {%for group in all_groups %}
+		<div class="scroll-content-item ui-widget-head">
+            <a href="/groups/{{group.grp.id}}" >{{ group.grp.agenda }}</a>
+        </div>
+			{% endfor %}
+            {% else %}
+            <p> You are not a part of any group currently. </p>
+            {% endif %}
+		
+	</div>
+	</fieldset >
+	</div>
+
+	<div class="scroll-pane1 ui-widget ui-widget-head ui-corner-all" style="background:#ffffff;">
+	<fieldset>
+		<legend align="l">NEW INVITE</legend>
+		<div class="scroll-content1">
+            {% if requested_groups_exist %}
+			{% for grps in requested_groups %}
+		<div class="scroll-content-item ui-widget-head">
+            <a href="/groups/{{grps.grp.id}}" >{{grps.grp.agenda}}</a>
+            <a href="/groups/join_group/{{ grps.grp.id }}/"> JOIN </a>
+        </div>
+        {% endfor %}
+        {% else %}
+
+        <br />
+        <h5> You are not a part of any group currently </h5>
+        {% endif %}
+		
+	</div>
+	</fieldset >
+	</div>
+
+<div id="forms">
+
+<ul class="mytabs" id="tabs">
+    <li class="current"><a href="/groups/{{ current_group.id }}/">HOME</a></li>
+    <li><a href="/groups/addevent/{{ current_group.id }}">EVENTS</a></li>
+    <li><a href="/groups/getmembers/{{ current_group.id }}">MEMBERS</a></li>
+            <!--<li><a href="/groups/getmembers/{{ current_group.id }}/">MEMBERS</a></li>-->
+            <li><a href="/groups/edit/{{ current_group.id }}/">EDIT</a></li>
+            <li><a href="/forum/{{ grp.forum.id }}/">FORUM</a></li>
+		</ul>
+
+
+        <h2 align="center">Group:  {{ current_group.agenda }}</h2>
+{% if admin %}
+<br />
+<br />
+<br />
+<a href="/groups/delete/{{ current_group.id }}"><input type="submit" id="submit" value="Delete Group" style="margin-left:5px; margin-top:5px"></a>
+<a href="/groups/edit/{{ current_group.id }}"><input type="submit" id="submit" value="Edit Group" style="margin-left:5px; margin-top:5px"></a>
+<a href="/groups/addevent/{{ current_group.id }}/"><input type="submit" id="submit" value="Add Event"  style="margin-left:5px; margin-top:5px"></a>
+{% endif %}
+
+</div>
+
+
+</div>
+	</body>	
+</html>
+
+

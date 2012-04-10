@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Untitled Page</title>
+
+	<style>
+		html, body, address, blockquote, div, dl, form, h1, h2, h3, h4, h5, h6, ol, p, pre, table, ul,
+dd, dt, li, tbody, td, tfoot, th, thead, tr, button, del, ins, map, object,
+a, abbr, acronym, b, bdo, big, br, cite, code, dfn, em, i, img, kbd, q, samp, small, span,
+strong, sub, sup, tt, var, legend, fieldset, figure {
+    margin: 0;
+    padding: 0;
+}
+
+img, fieldset {
+    border: 0;
+}
+
+/* set html5 elements to block */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { 
+    display: block;
+}
+
+h1,h2,h3,h4,h5,h6 { font-weight: normal; }
+
+body {
+    background: #184F95;
+    font: 14px Segoe UI, Arial, Sans-Serif;
+    color: #FFF;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+    color: #FFF;
+}
+a:hover {
+    text-decoration: none;
+    text-shadow: 0 1px 0 #999;
+}
+
+#body-wrap {
+    margin: 64px 128px;
+    }
+
+#header { margin-bottom: 48px; }
+#logo h1 { font-size: 48px; font-weight: normal; }
+#logo h1 a { color: #FFF; }
+#logo h1 a:hover { text-decoration: none; }
+#logo h2 { font-size: 14px; line-height: 16px; font-weight: normal; }
+
+
+ul.grid li.block { list-style: none; float: left; height: 186px; background: #044B8D; margin: 0 8px 8px 0; position: relative; }
+ul.grid li.block-full { width: 372px; }
+ul.grid li.block-half { width: 182px; }
+ul.grid li.block-new-row { clear: left; }               
+ul.grid li.bg-teal { background: #45A4AC; }
+ul.grid li.bg-green { background: #96B232; }
+ul.grid li.bg-purple { background: #494AA8; }
+ul.grid li.bg-magenta { background: #741763; }
+ul.grid li.bg-orange { background: #E2A01A; }
+
+.block-full .block-background { position: absolute; width: 372px; height: 186px; overflow: hidden; }
+.block-full .block-background img { width: 372px; height: 186; }
+.block-full .block-content-bottom { position: absolute; bottom: 0; width: 372px; height: 62px; background: #CD432D; }
+.block-full .block-content-bottom .inner { margin: 6px 12px; overflow: hidden; }  /*margin for the bottom*/
+.block-full .block-content-full { margin: 12px 12px; overflow: hidden; }
+.block-full .block-content-full .date { float: left; width: 72px; margin-right: 8px; }
+.block-full .block-content-full .date .date-day { font-size: 60px; line-height: 64px; }
+.block-full .block-content-full .date .date-month { text-transform: uppercase; }
+.block-full .block-content-full .content { height: 100px; overflow: hidden; }
+.block-full .footnote { position: absolute; left: 12px; bottom: 12px; font-size: 14px; }
+.block-full .block-icon { width: 64px; height: 64px; position: absolute; left: 36px; top: 36px;}
+.block-full .app-title { position: absolute; left: 128px; top: 40px; font-size: 40px; width: 160px; }
+.block-full .block-footnote { position: absolute; bottom: 0px; height:24px; padding: 4px 12px; width: 288px; font-size: 14px; background: #CD432D; }
+.block-full .block-content-full h2 { margin-bottom: 8px; }
+
+.block-half .block-icon { width: 64px; height: 64px; margin: 36px auto 0; }
+.block-half .footnote { position: absolute; left: 12px; bottom: 12px; font-size: 14px; }
+
+.post-title { font-size: 16px; width: 248px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; }
+.post-sub-title { font-size: 12px; width: 248px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; }
+.post-comments { position: absolute; right: 12px; bottom: 8px; }
+
+ul.list-link li { padding-left: 24px; line-height: 20px; background: url(images/list-bullet.png) no-repeat 8px center; }
+
+.page2{ margin: 640px 0px;}
+	</style>
+    <script type="text/javascript" src="#"></script>
+</head>
+<body>
+
+<div id="body-wrap">
+
+	
+	<header id="header">
+		<hgroup id="logo">
+			<h1><a href="#">MY PLANNER</a></h1>
+			
+			<h3>Welcome,<a href={{url}}>{{username}}</a></h3>
+
+			<h2>DA-IICT</h2>
+		</hgroup>
+	</header>
+
+	<div class="content">
+
+		<ul class="grid">
+			<li class="block block-full block-new-row">
+				<div class="block-background">
+					<a href="#"><img src="student_planners.jpg" /></a>
+				</div>
+				<div class="block-content-bottom">
+					<div class="inner">						
+						<h2 class="post-title"><a href="/planner/">Plan your day :)</a></h2>	
+						<span class="post-sub-title">Jan 23, 2011</span>
+
+						<div class="post-comments"><a href="#">12</a></div>
+					</div>
+				</div>				
+			</li>
+			<li class="block block-full">
+				<div class="block-background">
+					<img src="appointment_pic.jpg" />
+				</div>
+				<div class="block-content-bottom">
+
+					<div class="inner">						
+						<h2 class="post-title"><a href="#">My Appointments</a></h2>	
+						<!--<span class="post-sub-title">Jan 02, 2011</span>
+						<div class="post-comments"><a href="#">3</a></div>-->
+					</div>
+				</div>
+			</li>
+			<li class="block block-full bg-orange">
+
+				<div class="block-content-full">
+					<div class="date">
+						<div class="date-day">23</div>
+						<div class="date-month">January</div>
+					</div>
+					<div class="content">
+						All indians are my brothers and sisters.
+					</div>
+
+					<h3 class="footnote"><a href="#">News and Updates</a></h3>
+				</div>
+			</li>
+			<li class="block block-half block-new-row bg-purple">
+				<div class="block-icon">
+					<a href="#"><img src="images/icon-large-02.png" /></a>
+				</div>
+				<h3 class="footnote"><a href="/groups">groups</a></h3>
+
+			</li>
+			<li class="block block-half bg-teal">
+				<div class="block-icon">
+					<a href="#"><img src="images/icon-large-03.png" /></a>
+				</div>
+				<h3 class="footnote"><a href="#">My Portfilio</a></h3>
+			</li>
+			<li class="block block-full">
+
+				<div class="block-background">
+					<img src="images/6.jpg" style="margin-top: -30px;" />
+				</div>
+				<h3 class="footnote"><a href="#">Gallery</a></h3>
+			</li>
+			<li class="block block-full bg-green">
+				<div class="block-content-full">
+					<h2>My Friends</h2>
+
+					<ul class="list-link">
+						<li><a href="/user"></a></li>
+						<li><a href="#">Icondock</a></li>
+						<li><a href="#">Web Designer Wall</a></li>
+						<li><a href="#">Best Web Gallery</a></li>
+					</ul>
+				</div>
+
+			</li>
+			<li class="block block-full block-new-row bg-magenta">
+				<div class="block-icon">
+					<a href="#"><img src="images/icon-large-01.png" /></a>
+				</div>
+				<h3 class="app-title"><a href="#">NEWS FEEDS</a></h3>
+			</li>
+			<li class="block block-full">
+
+				<div class="block-content-full">
+					<h2>My Scheduler (<a href="#"></a>)</h2>
+					<p>scheduler <a href="#"> </a>  <a href="#"></a> 6 hours ago</p>					
+				</div>
+
+			</li>
+			<li class="block block-full bg-purple">
+				<div class="block-background">
+					<a href="#"><img src="images/map-01.png" /></a>
+				</div>
+				<div class="block-footnote">
+					<h3><a href="#">Need help??? connect with your mentor</a></h3>
+				</div>
+
+			</li>
+
+		</ul>
+	</div>
+
+</div>
+
+</body>
+</html>

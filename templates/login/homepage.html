@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Untitled Page</title>
+	<style>
+	html, body, address, blockquote, div, dl, form, h1, h2, h3, h4, h5, h6, ol, p, pre, table, ul,
+	dd, dt, li, tbody, td, tfoot, th, thead, tr, button, del, ins, map, object,
+	a, abbr, acronym, b, bdo, big, br, cite, code, dfn, em, i, img, kbd, q, samp, small, span,
+	strong, sub, sup, tt, var, legend, fieldset, figure 
+	{
+    margin: 0;
+    padding: 0;
+	}
+
+	img, fieldset {
+    border: 0;
+	}
+
+	/* set html5 elements to block */
+	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { 
+	display: block;
+	}	
+
+	h1,h2,h3,h4,h5,h6 { font-weight: normal; }
+
+	body {
+	background: #eee url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAMAAAC6sdbXAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF3d3d////riJKgAAAAAJ0Uk5T/wDltzBKAAAAFUlEQVR42mJgBAEGGMmAxAYCgAADAAGGABmnk/7aAAAAAElFTkSuQmCC);
+    font: 14px Segoe UI, Arial, Sans-Serif;
+    color: #fff;
+	}
+
+	a {
+    text-decoration: none;
+    outline: none;
+    color: #ffffff;
+	}
+	a:hover {
+    text-decoration: none;
+    text-shadow: 0 1px 0 #999;
+	}
+
+	#body-wrap {
+    margin: 64px 128px;
+    }
+
+	#header { margin-bottom: 48px; }
+	#header a h3 p{ color: #000000 }
+	#logo h1 { font-size: 48px; font-weight: normal; }
+	#logo h1 a { color: #444444; }
+	#logo h1 a:hover { text-decoration: none; }
+	#logo h2 { color: #777777; font-size: 14px; line-height: 16px; font-weight: normal; }
+
+	ul.grid {position:absolute; width:1300px; height: 800px;}
+	ul.grid li.block { list-style: none; float: left; height: 186px; background: #044B8D; margin: 0 8px 8px 0; position: relative; -moz-border-radius: 20px;}
+	ul.grid li.block-full { width: 372px; }
+	ul.grid li.block-half { width: 182px; }
+	ul.grid li.block-new-row { clear: left; }               
+	ul.grid li.bg-teal { background: 	#79B232; }
+	ul.grid li.bg-purple { background: #494AA8; }
+	ul.grid li.bg-magenta { background: #741763; }
+	ul.grid li.bg-orange { background: 	#E2A01A; }
+	ul.grid li.bg-green { background: #96B232; }
+	
+	.block-full .block-background { position: absolute; width: 372px; height: 186px; overflow: hidden; }
+	.block-full .block-background img { width: 372px; height: 186; }
+	.block-full .block-content-bottom { position: absolute; bottom: 0; width: 372px; height: 32px; background: #CD432D; -moz-border-radius:0 0 20px 20px; }
+	.block-full .block-content-bottom .inner { margin: 6px 12px; overflow: hidden; }  /*margin for the bottom*/
+	.block-full .block-content-full { margin: 12px 12px; overflow: hidden; }
+	.block-full .block-content-full .date { float: left; width: 72px; margin-right: 8px; }
+	.block-full .block-content-full .date .date-day { font-size: 70px; line-height: 64px; }
+	.block-full .block-content-full .date .date-month { text-transform: uppercase; }
+	.block-full .block-content-full .content { height: 100px; overflow: hidden; }
+	.block-full .footnote { position: absolute; left: 12px; bottom: 12px; font-size: 14px; }
+	.block-full .block-icon { width: 64px; height: 64px; position: absolute; left: 36px; top: 36px;}
+	.block-full .app-title { position: absolute; left: 128px; top: 40px; font-size: 40px; width: 160px; }
+	.block-full .block-footnote { position: absolute; bottom: 0px; height:48px;  width: 372px; font-size: 14px; background: #CD432D; -moz-border-radius:0 0 20px 20px;}
+	.block-full .block-content-full h2 { margin-bottom: 8px; }
+
+	.block-half .block-icon { width: 64px; height: 64px; margin: 36px auto 0; }
+	.block-half .footnote { position: absolute; left: 12px; bottom: 12px; font-size: 14px; }
+
+	.post-title { font-size: 16px; width: 248px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; }
+	.post-sub-title { font-size: 12px; width: 248px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; }
+	.post-comments { position: absolute; right: 12px; bottom: 8px; }
+
+	ul.list-link li { padding-left: 24px; line-height: 20px; background: url(images/list-bullet.png) no-repeat 8px center; }
+
+	.page2{ margin: 640px 0px;}
+	
+	
+
+
+	</style>
+</head>
+<body>
+
+<div id="body-wrap">
+
+	
+	<header id="header">
+		<hgroup id="logo">
+			<h1><a href="#">MY PLANNER</a></h1>
+			<h2>DA-IICT</h2>
+		</hgroup>
+	</header>
+
+	<div class="content">
+
+		<ul class="grid">
+			<li class="block block-full block-new-row" style="overflow:hidden";>
+				
+            <a href="/plan/"><img src="{{ STATIC_URL }}planner.jpg" alt="Planner" height="160" width="372" /></a>
+					
+				
+				<div class="block-content-bottom">
+					<div class="inner">						
+						<h2 class="post-title">Plan your day :)</h2>
+					</div>
+				</div>				
+			</li>
+			
+			<li class="block block-full bg-orange">
+
+				<div class="block-content-full">
+					<div class="date">
+                        <div class="date-day">{{ date.day }}</div>
+                        <div class="date-month">{{ month_name }}</div>
+					</div>
+					<div class="content">
+						All indians are my brothers and sisters.
+					</div>
+
+				</div>
+			</li>
+			
+			<li class="block block-full" style="overflow:hidden">
+            <a href="/calendar/month/"><img src="{{ STATIC_URL }}calendar1.jpg" alt="Calendar" height="160" width="372" /></a>
+				<div class="block-content-bottom">
+
+					<div class="inner">						
+						<h2 class="post-title">My Calendar</h2>	
+						
+					</div>
+				</div>
+			</li>
+			
+			<li class="block block-full bg-purple" style="overflow:hidden">
+            <h2 align="center" style="font-family:Copperplate Gothic Bold; font-size:300%; padding-top:50px"><a href="/profile/">Portfolio</a></h2>
+                <p style="color:#ffffff; font-size: 15px; padding: 15px;"
+                align="center"><a href="/create_profile/">Edit Profile</a></p>
+                <div class="inner">
+            {% if edit %}
+                    <p style="color:#000000; font-size: 15px;padding: 20px;"> <a href="/edit_courses/">Edit courses</a></p>
+                {% endif %}
+            </div>
+				
+			</li>
+			
+			
+			<li class="block block-full bg-teal">
+				<h3 style="color: #000000; padding:20px; font-size:30px" align="center">Welcome<br /><a href={{url}} style="color: #000000">{{username}}</a></h3>
+				<a href="/logout/"><h4 style="color:#000000; font-size:20px; font-weight:bold; font-stretch:expanded" align="center">Log Out</h4></a>
+				
+			</li>
+			
+			<li class="block block-full bg-teal" style="overflow:hidden";>
+				
+            <a href="/forum/"><img src="{{ STATIC_URL }}forum.jpg" alt="Discussion Forum" height="186" width="372" /></a>
+				
+			</li>
+			
+			
+			<li class="block block-full block-new-row bg-magenta" style="overflow:hidden;">
+				
+
+            <iframe id="NewsWindow" src="{{ STATIC_URL }}news_feed.html" width="372" height="186" marginwidth="0" marginheight="0" frameborder="0" scrolling="no" style="border: #000000 1px solid;"></iframe>
+<div class="block-content-bottom">
+
+					<div class="inner">						
+						<h2 class="post-title">News Feed</h2>	
+						
+					</div>
+				</div>
+
+			</li>
+			<li class="block block-full" style="overflow:hidden">
+            <a href="/addevent/"><img src="{{ STATIC_URL }}events.jpg" alt="Events" height="186" width="372" /></a>
+				
+			</li>
+			
+			
+			<li class="block block-full " style="overflow:hidden";>
+				
+            <a href="/groups/"><img src="{{ STATIC_URL }}Groups3.jpg" alt="Groups" height="160" width="372" /></a>
+					
+				
+				<div class="block-content-bottom">
+					<div class="inner">						
+						<h2 class="post-title">Groups</h2>
+					</div>
+				</div>				
+			</li>
+			
+
+		</ul>
+	</div>
+
+</div>
+<script= "text/javascript" src = "{{ STATIC_URL }}jquery.js"></script>
+<script= "text/javascript" src = "{{ STATIC_URL }}news-ticker.js"></script>
+</body>
+</html>

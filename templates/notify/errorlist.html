@@ -1,0 +1,26 @@
+{% if form.errors %}
+<div id="form-error">
+    <p> The event could not be added as one or more error(s) occurred.<br />Resubmit the form after making the following changes:</p>
+    <ul>
+        {% for field in form %}
+        {% if field.errors %}
+        <li> {{ field.label }}:{{ field.errors|striptags }}</li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+
+</div>
+{% endif %}
+{% if eventform.errors %}
+<div id="eventform-error">
+    <p> The event could not be added as one or more error(s) occurred.<br />Resubmit the eventform after making the following changes:</p>
+    <ul>
+        {% for field in eventform %}
+        {% if field.errors %}
+        <li> {{ field.label }}:{{ field.errors|striptags }}</li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+
+</div>
+{% endif %}

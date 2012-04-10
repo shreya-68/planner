@@ -1,0 +1,2 @@
+./manage.py dbshell
+\dt

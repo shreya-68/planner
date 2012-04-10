@@ -1,0 +1,38 @@
+
+<a href = "{% url schedule.views.view_day year month day 'prev' %}">&lt;&lt; Prev</a>
+<a href = "{% url schedule.views.view_day year month day 'next' %}">Next &lt;&gt;</a>
+
+<h4>{{ month_name }} {{ year }}</h4>
+
+<div class = "week">
+
+    <table>
+        <tr>
+            <td class = "empty">Mon</td>
+            <td class = "empty">Tue</td>
+            <td class = "empty">Wed</td>
+            <td class = "empty">Thu</td>
+            <td class = "empty">Fri</td>
+            <td class = "empty">Sat</td>
+            <td class = "empty">Sun</td>
+        </tr>
+
+        <tr>
+        {% for days, entries, current in week_days %}
+                <td class = "current">
+                    {% if days != 0 %}
+                        {{ days }}
+                        {% for entry in entries %}
+                            <br />
+                            <b> {{ entry.user }}</b>: {{ entry.description|safe }}
+                        {% endfor %}
+                    {% endif %}
+                </td>
+        {% endfor %}
+        </tr>
+    </table>
+    <div class = "clear"></div>
+</div>
+
+
+

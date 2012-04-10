@@ -1,0 +1,7 @@
+{% if reminders %}
+<div class = "reminders">
+    <div class = "gr">Alerts</div>
+    {% for reminder in reminders %}<p>{{reminder.name}}</p>
+    {% endfor %}
+</div>
+{% endif %}

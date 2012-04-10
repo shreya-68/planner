@@ -1,0 +1,1 @@
+insert into groups_groupmem (groupid,memberid) VALUES (1,200901017);

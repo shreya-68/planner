@@ -1,6 +1,15 @@
 from django.db import models
+from usrper import *
+from django.forms import ModelForm
+from django import forms
+import datetime
+#from datetime import datetime
+from django.contrib import admin
+from django.contrib.auth.models import User
+# Create your models here.
 
 class Event_Type(models.Model):
+    id = models.IntegerField(primary_key = True)
     EVENT_CHOICES = (
             (u'P', 'Project'),
             (u'C', 'Club'),
@@ -12,25 +21,52 @@ class Event_Type(models.Model):
             (u'M', 'Meal'),
     )
     event_type = models.CharField(max_length=2, choices=EVENT_CHOICES)
-    priority = models.IntegerField()
+    priority = models.IntegerField(default = 0)
     def __unicode__(self):
         return self.get_event_type_display()
 
+class Pre_prep(models.Model):
+    pp_duration = models.DateTimeField()
+    complete = models.DateTimeField(default = 0)
+    quantum_time = models.DateTimeField(default = 0)
+    max_eff = models.DateTimeField()
+
 class Event(models.Model):
-    duration = models.TimeField(None)
-    pre_prep = models.BooleanField()
-    name = models.CharField(max_length=40)
+    name = models.CharField(max_length=60)
     datetime = models.DateTimeField()
-    venue = models.CharField(max_length=40)
-    complete = models.FloatField(null=True)
-    priority = models.IntegerField(default=0)
+    venue = models.CharField(max_length=40, blank = True, null = True)
+    duration = models.DateTimeField(None)
+    pp = models.BooleanField()
+    pre_prep = models.ForeignKey(Pre_prep, blank = True, null = True, on_delete=models.SET_NULL)
+    priority = models.IntegerField(default = 0)
+    remind = models.BooleanField(default = False)
+    user = models.ForeignKey(User, blank = True, null = True)
+    start_time = models.DateTimeField(auto_now_add = True)
+    end_time = models.DateTimeField(blank = True, null = True)
+    USER_DIFF_CHOICES = (
+            (1,1),
+            (2,2),
+            (3,3),
+            (4,4),
+            (5,5),
+    )       
+    user_difficulty = models.IntegerField(default = 1, choices=USER_DIFF_CHOICES)
+    
+
+    def __unicode__(self):
+        if self.name:
+        	return unicode(self.user) + u" - " + self.name
+        else:
+            return unicode(self.user) + u" - " + self.datetime
+
+    class Meta:
+        verbose_name_plural = "events"
+    
 
 class Course(models.Model):
     id = models.CharField(max_length=5, primary_key=True)
-    prof = models.CharField(max_length=20)
-    credits = models.FloatField(None)
-
-class Lecture(models.Model):
+    name = models.CharField(max_length = 60)
+    prof = models.CharField(max_length= 40)
     SLOT_CHOICES = (
             (1, 1),
             (2,2),
@@ -41,42 +77,36 @@ class Lecture(models.Model):
             (7,7),
             (8,8),
     )
-    slot = models.IntegerField(choices=SLOT_CHOICES)
+    slot = models.IntegerField(default = 1, choices=SLOT_CHOICES)
+
+class CourseLecture(models.Model):
+    course = models.ForeignKey(Course)
+    DAY_CHOICES = (
+            (0, 'Monday'),
+            (1, 'Tuesday'),
+            (2, 'Wednesday'),
+            (3, 'Thursday'),
+            (4, 'Friday'),
+            (5, 'Saturday'),
+            (6, 'Sunday'),
+    )
+    day = models.IntegerField(max_length = 9, choices = DAY_CHOICES)
+    time = models.DateTimeField()
+    duration = models.DateTimeField()
+
+
+class Lecture(models.Model):
     course = models.ForeignKey(Course)
     Type = models.ForeignKey(Event_Type)
     event = models.ForeignKey(Event)
-    USER_DIFF_CHOICES = (
-            (1,1),
-            (2,2),
-            (3,3),
-            (4,4),
-            (5,5),
-    )       
-    user_difficulty = models.IntegerField(choices=USER_DIFF_CHOICES)
 
 class Project(models.Model):
     course = models.ForeignKey(Course)
     Type = models.ForeignKey(Event_Type)
     event = models.ForeignKey(Event) 
-    USER_DIFF_CHOICES = (
-            (1,1),
-            (2,2),
-            (3,3),
-            (4,4),
-            (5,5),
-    )       
-    user_difficulty = models.IntegerField(choices=USER_DIFF_CHOICES)
 
 class Sport(models.Model):
         
-    USER_DIFF_CHOICES = (
-            (1,1),
-            (2,2),
-            (3,3),
-            (4,4),
-            (5,5),
-    )       
-    user_difficulty = models.IntegerField(choices=USER_DIFF_CHOICES)
     Type = models.ForeignKey(Event_Type)
     event = models.ForeignKey(Event) 
         
@@ -85,41 +115,31 @@ class Exam(models.Model):
     Type = models.ForeignKey(Event_Type)
     event = models.ForeignKey(Event) 
     course = models.ForeignKey(Course)
-    USER_DIFF_CHOICES = (
-            (1,1),
-            (2,2),
-            (3,3),
-            (4,4),
-            (5,5),
-    )       
-    user_difficulty = models.IntegerField(choices=USER_DIFF_CHOICES)
 
 
 class Club(models.Model):
     club_name = models.CharField(max_length=40)
     Type = models.ForeignKey(Event_Type)
     event = models.ForeignKey(Event)
-    USER_DIFF_CHOICES = (
-            (1,1),
-            (2,2),
-            (3,3),
-            (4,4),
-            (5,5),
-    )       
-    user_difficulty = models.IntegerField(choices=USER_DIFF_CHOICES)
     
 
 class Other(models.Model):
    #event = models.ForeignKey(Events)
     Type = models.ForeignKey(Event_Type)
     event = models.ForeignKey(Event)
-    #USER_DIFF_CHOICES = (
-     #       (1,1),
-      #      (2,2),
-       #     (3,3),
-        #    (4,4),
-         #   (5,5),
-    #)       
-    #user_difficulty = models.IntegerField(choices=USER_DIFF_CHOICES)
 
-# Create your models here.
+
+class EventAdmin(admin.ModelAdmin):
+    list_diplay = ["user", "name", "datetime", "duration", "priority", "remind"]
+    list_filter = ["user"]
+
+class Event_typeAdmin(admin.ModelAdmin):
+    list_display = ["event_type", "priority"]
+
+
+
+
+
+
+
+

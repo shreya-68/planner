@@ -1,0 +1,12 @@
+
+<h3> Edit </h3>
+<form action = "{% url schedule.views.edit_event event.eid %}" method = "POST">{% csrf_token %}
+    <p>Title: {{ event.name }}</p>
+    <p>Start Time: {{ event.datetime }}</p>
+    <p>Venue: {{ event.venue }}</p>
+    <p>Duration: {{ event.duration }}</p>
+    <p>Priority: {{ event.datetime }}</p>
+    <p>Remind: {{ event.datetime }}</p>
+    <p>Pre-Preparation: {{ event.pre_prep }}</p>
+    <input type = "submit" value = "submit" />
+</form>

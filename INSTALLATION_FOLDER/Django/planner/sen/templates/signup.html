@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <title>DA-IICT Scheduler Accounts</title>
+<style type="text/css">
+  html, body, div, h1, h2, h3, h4, h5, h6, p, img, dl,
+  dt, dd, ol, ul, li, table, tr, td, form, object, embed,
+  article, aside, canvas, command, details, fieldset,
+  figcaption, figure, footer, group, header, hgroup, legend,
+  mark, menu, meter, nav, output, progress, section, summary,
+  time, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  }
+  article, aside, details, figcaption, figure, footer,
+  header, hgroup, menu, nav, section {
+  display: block;
+  }
+  html {
+  font: 81.25% arial, helvetica, sans-serif;
+  background: #fff;
+  color: #333;
+  line-height: 1;
+  direction: ltr;
+  }
+  a {
+  color: #15c;
+  text-decoration: none;
+  }
+  a:active {
+  color: #d14836;
+  }
+  a:hover {
+  text-decoration: underline;
+  }
+  h1, h2, h3, h4, h5, h6 {
+  color: #222;
+  font-size: 1.54em;
+  font-weight: normal;
+  line-height: 24px;
+  margin: 0 0 .46em;
+  }
+  p {
+  line-height: 17px;
+  margin: 0 0 1em;
+  }
+  ol, ul {
+  list-style: none;
+  line-height: 17px;
+  margin: 0 0 1em;
+  }
+  li {
+  margin: 0 0 .5em;
+  }
+  table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  }
+  strong {
+  color: #222;
+  }
+</style>
+<style type="text/css">
+  html, body {
+  position: absolute;
+  height: 100%;
+  min-width: 100%;
+  }
+  .wrapper {
+  position: relative;
+  min-height: 100%;
+  }
+  .content {
+  padding: 0px 44px;
+  }
+  .header-bar {
+  height: 71px;
+  background:#FAF0E6;
+  border-bottom: 1px solid #e5e5e5;
+  overflow: hidden;
+  }
+  .header .signin-button {
+  margin: 22px 0 0;
+  float: right;
+  }
+  .header .signin-button a {
+  font-size: 13px;
+  font-weight: normal;
+  }
+
+  .main {
+  margin: 0px auto;
+  width: 650px;
+  padding-top: 23px;
+  padding-bottom: 320px;
+  }
+  .main h1:first-child {
+  margin: 0 0 .92em;
+  }
+  
+  .redtext {
+  color: #dd4b39;
+  }
+  .greytext {
+  color: #555;
+  }
+</style>
+<style type="text/css">
+  button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  }
+  button::-moz-focus-inner,
+  input::-moz-focus-inner {
+  border: 0;
+  }
+  input[type=email],
+  input[type=number],
+  input[type=password],
+  input[type=tel],
+  input[type=text],
+  input[type=url] {
+  display: inline-block;
+  height: 29px;
+  margin: 0;
+  padding: 0 8px;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-top: 1px solid #c0c0c0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  }
+  input[type=email]:hover,
+  input[type=number]:hover,
+  input[type=password]:hover,
+  input[type=tel]:hover,
+  input[type=text]:hover,
+  input[type=url]:hover {
+  border: 1px solid #b9b9b9;
+  border-top: 1px solid #a0a0a0;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  }
+  input[type=email]:focus,
+  input[type=number]:focus,
+  input[type=password]:focus,
+  input[type=tel]:focus,
+  input[type=text]:focus,
+  input[type=url]:focus {
+  outline: none;
+  border: 1px solid #4d90fe;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+  }
+  input[type=email][disabled=disabled],
+  input[type=number][disabled=disabled],
+  input[type=password][disabled=disabled],
+  input[type=tel][disabled=disabled],
+  input[type=text][disabled=disabled],
+  input[type=url][disabled=disabled] {
+  border: 1px solid #e5e5e5;
+  background: #f5f5f5;
+  }
+  .g-button {
+  display: inline-block;
+  min-width: 46px;
+  text-align: center;
+  color: #444;
+  font-size: 11px;
+  font-weight: bold;
+  height: 27px;
+  padding: 0 8px;
+  line-height: 27px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-transition: all 0.218s;
+  -moz-transition: all 0.218s;
+  -ms-transition: all 0.218s;
+  -o-transition: all 0.218s;
+  transition: all 0.218s;
+  border: 1px solid #dcdcdc;
+  background-color: #f5f5f5;
+  background-image: -webkit-gradient(linear,left top,left bottom,from(#f5f5f5),to(#f1f1f1));
+  background-image: -webkit-linear-gradient(top,#f5f5f5,#f1f1f1);
+  background-image: -moz-linear-gradient(top,#f5f5f5,#f1f1f1);
+  background-image: -ms-linear-gradient(top,#f5f5f5,#f1f1f1);
+  background-image: -o-linear-gradient(top,#f5f5f5,#f1f1f1);
+  background-image: linear-gradient(top,#f5f5f5,#f1f1f1);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  cursor: default;
+  }
+  .g-button:hover {
+  border: 1px solid #c6c6c6;
+  color: #333;
+  text-decoration: none;
+  -webkit-transition: all 0.0s;
+  -moz-transition: all 0.0s;
+  -ms-transition: all 0.0s;
+  -o-transition: all 0.0s;
+  transition: all 0.0s;
+  background-color: #f8f8f8;
+  background-image: -webkit-gradient(linear,left top,left bottom,from(#f8f8f8),to(#f1f1f1));
+  background-image: -webkit-linear-gradient(top,#f8f8f8,#f1f1f1);
+  background-image: -moz-linear-gradient(top,#f8f8f8,#f1f1f1);
+  background-image: -ms-linear-gradient(top,#f8f8f8,#f1f1f1);
+  background-image: -o-linear-gradient(top,#f8f8f8,#f1f1f1);
+  background-image: linear-gradient(top,#f8f8f8,#f1f1f1);
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  }
+  .g-button:active {
+  background-color: #f6f6f6;
+  background-image: -webkit-gradient(linear,left top,left bottom,from(#f6f6f6),to(#f1f1f1));
+  background-image: -webkit-linear-gradient(top,#f6f6f6,#f1f1f1);
+  background-image: -moz-linear-gradient(top,#f6f6f6,#f1f1f1);
+  background-image: -ms-linear-gradient(top,#f6f6f6,#f1f1f1);
+  background-image: -o-linear-gradient(top,#f6f6f6,#f1f1f1);
+  background-image: linear-gradient(top,#f6f6f6,#f1f1f1);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  }
+  .g-button:visited {
+  color: #666;
+  }
+ </style>
+<style type="text/css">
+  .main {
+  width: 950px;
+  }
+  .signup-steps.step-1 h1 {
+  text-align: left;
+  }
+  .signup-steps.step-2 h1 {
+  text-align: center;
+  }
+  .signup-steps.step-3 h1 {
+  text-align: right;
+  }
+  .signup-steps ol {
+  position: relative;
+  margin: 0 0 45px;
+  height: 13px;
+  border-bottom: 1px solid #ebebeb;
+  }
+  .signup-steps ol li {
+  position: absolute;
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+  border: 1px solid #ebebeb;
+  background: #fff;
+  color: #666;
+  line-height: 25px;
+  text-align: center;
+  font-weight: bold;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  border-radius: 1em;
+  }
+  .signup-steps ol li.step-1 {
+  left: 0;
+  }
+  .signup-steps ol li.step-2 {
+  margin-left: -14px;
+  left: 50%;
+  }
+  .signup-steps ol li.step-3 {
+  right: 0;
+  }
+  .signup-steps ol li.selected {
+  color: #fff;
+  background: #dd4b39;
+  border: 0;
+  }
+</style>
+<style type="text/css">
+  .signuponepage .sign-up {
+  width: 362px;
+  float: right;
+  }
+  .signuponepage .signup-box {
+  margin: 0;
+  padding: 25px;
+  background: #f5f5f5;
+  border: 1px solid #e5e5e5;
+  }
+  .signuponepage .side-content {
+  margin: 0 420px 0 0;
+  }
+  .signuponepage .side-content .benefit {
+  margin: 0 0 2.5em;
+  overflow: hidden;
+  }
+  .signuponepage .side-content .benefit img:first-child {
+  float: left;
+  border: 1px solid #e5e5e5;
+  }
+  .signuponepage .side-content .benefit div {
+  margin: 0 0 0 275px;
+  }
+  .signuponepage .side-content .benefit div h2 {
+  color: #555;
+  }
+  .signuponepage .side-content .benefit div p {
+  color: #999;
+  line-height: 19px;
+  }
+  .signuponepage input[type=text],
+  .signuponepage input[type=password] {
+  direction: ltr;
+  }
+  .signuponepage input[type=text],
+  .signuponepage input[type=password],
+  .signuponepage select {
+  width: 100%;
+  }
+  .signuponepage .form-element {
+  position: relative;
+  margin: 0 0 1.5em;
+  }
+  .signuponepage .form-element label {
+  display: inline-block;
+  width: 100%;
+  position: relative;
+  }
+  .signuponepage .form-element strong {
+  margin: 0 0 .5em;
+  display: inline-block;
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  }
+  .signuponepage .form-element.multi-field label strong {
+  display: none;
+  }
+  .signuponepage .form-element .placeholder-text {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  color: #999;
+  display: none;
+  }
+  .signuponepage .form-element.name label.firstname {
+  width: 150px;
+  margin-right: 5px;
+  }
+  .signuponepage .form-element.name label.lastname {
+  width: 150px;
+  }
+  .signuponepage .form-element.name label.firstname input,
+  .signuponepage .form-element.name label.lastname input {
+  direction: ltr;
+  }
+  .signuponepage .form-element.name .placeholder-text {
+  left: 10px;
+  }
+  .signuponepage .form-element.birthday label {
+  margin-right: 5px;
+  }
+  .signuponepage .form-element.birthday label.year {
+  width: 97px;
+  margin-right: 0;
+  }
+  .signuponepage .form-element.birthday label.month {
+  width: 135px;
+  }
+  .signuponepage .form-element.birthday label.day {
+  width: 60px;
+  }
+  .signuponepage .form-element.daiict-address input {
+  direction: ltr;
+  }
+  .signuponepage .form-element .atdaiict {
+  position: absolute;
+  top: 27px;
+  right: 10px;
+  color: #999;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  direction: ltr;
+  }
+  .signuponepage .form-element.nextstep-button {
+  text-align: right;
+  margin: 0;
+  }
+  .signuponepage .infomsg {
+  color: #797979;
+  line-height: 17px;
+  margin: 0.5em 0 0;
+  display: block;
+  }
+  .main {
+  width: 650px;
+  }
+  .signuponepage .side-content {
+  margin-right: 400px;
+  }
+  .signuponepage .side-content .benefit img {
+  margin-bottom: 20px;
+  }
+  .signuponepage .side-content .benefit div {
+  margin: 0;
+  }
+</style>
+  </head>
+  <body>
+  <div class="wrapper">
+  <div class="header-bar">
+  <div class="header  content ">
+  <span class="signin-button">
+  <a id="link-signin" class="g-button" href="/login/" >Sign in</a>
+  </span>
+  </div>
+  </div>
+  <div class="signuponepage main">
+  <div>
+  <div class="sign-up">
+  <div class="signup-box">
+  <form class="createaccount-form" id="createaccount" name="createaccount" action="/putindatabase/" method="POST">
+  <div class="form-element multi-field name" id="name-form-element">
+  <fieldset>
+  <legend><strong>Name</strong></legend>
+  <label class="firstname">
+  <input type="text" value=""  
+  
+    
+  name="firstname" id="firstname" value=""
+
+  
+>
+  </label>
+  <label class="lastname">
+  <input type="text" value=""  
+  
+    
+  name="lastname" id="lastname" value=""
+
+  
+>
+  </label>
+  </fieldset>
+  </div>
+  <div class="form-element daiict-address" id="daiict-address-form-element">
+  <label>
+  <strong>
+  ENTER YOUR ID
+  </strong>
+  <input type="text" maxlength="30" autocomplete="off"  
+  
+    
+  name="userid" id="userid" value=""
+
+  
+>
+  </label>
+  <div class="infomsg" id="daiict-address-infomessage">
+  You can use letters, numbers, and periods.
+  </div>
+  </div>
+  <div class="form-element" id="password-form-element">
+  <label>
+  <strong>Create a password</strong>
+  <input type="password" name="password" id="password" >
+  </label>
+  </div>
+  <div class="form-element" id="confirm-password-form-element">
+  <label>
+  <strong>Confirm your password</strong>
+  <input type="password" name="passworda" id="passworda" >
+  </label>
+  </div>
+  <div class="form-element multi-field birthday" id="birthday-form-element">
+  <fieldset>
+  <legend><strong>Birthday</strong></legend>
+  <label class="month">
+  <span id="BirthMonthHolder" >
+  <select id="BirthMonth" name="BirthMonth">
+  <option value="01" >January</option>
+  <option value="02" >February</option>
+  <option value="03" >March</option>
+  <option value="04" >April</option>
+  <option value="05" >May</option>
+  <option value="06" >June</option>
+  <option value="07" >July</option>
+  <option value="08" >August</option>
+  <option value="09" >September</option>
+  <option value="10" >October</option>
+  <option value="11" >November</option>
+  <option value="12" >December</option>
+  </select>
+  </span>
+  </label>
+  <label class="day">
+  <input type="text" value=""  
+  
+    
+  name="BirthDay" id="BirthDay" value=""
+
+  
+>
+  </label>
+  <label class="year">
+  <input type="text" value=""  
+  
+    
+  name="BirthYear" id="BirthYear" value=""
+
+  
+>
+  </label>
+  </fieldset>
+  </div>
+  <div class="form-element" id="gender-form-element">
+  <label>
+  <strong>Gender</strong>
+  <div id="GenderHolder" >
+  <select id="Gender" name="Gender">
+  <option value="OTHER" >Other</option>
+  <option value="FEMALE" >Female</option>
+  <option value="MALE" >Male</option>
+  </select>
+  </div>
+  </label>
+  </div>
+  <div class="form-element" id="phone-form-element">
+  <label for="RecoveryPhoneNumber">
+  <strong>Mobile phone</strong>
+  </label>
+  <input type="text" tabindex="0" 
+  
+    
+  name="phonenumber" id="phonenumber" value="+91"
+
+  
+ >
+  </div>
+  <div class="form-element recovery-email" id="recovery-email-form-element">
+  <label>
+  <strong>Other email address</strong>
+  <input type="text" 
+  
+    
+  name="emailaddress" id="emailaddress" value=""
+
+  
+  >
+  </label>
+  </div>
+   <div class="form-element nextstep-button">
+  <input id="submitbutton" name="submitbutton" type="submit" value="Next step" class="g-button g-button-submit">
+  </div>
+  </form>
+  </div>
+  </div>
+
+  </div>
+  </div>
+  </div>
+  </body>
+</html>

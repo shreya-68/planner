@@ -1,0 +1,1 @@
+inspectdb - for converting existing db into models

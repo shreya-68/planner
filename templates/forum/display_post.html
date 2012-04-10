@@ -1,0 +1,255 @@
+<html> 
+<head> 
+	
+ 
+	<title>Formum Page</title> 
+	
+	<style type="text/css"> 
+	body { 
+		margin: 0; 
+		background: #eee url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAMAAAC6sdbXAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF3d3d////riJKgAAAAAJ0Uk5T/wDltzBKAAAAFUlEQVR42mJgBAEGGMmAxAYCgAADAAGGABmnk/7aAAAAAElFTkSuQmCC);	
+					
+		
+	}
+	#page-head{
+	position:absolute;
+	border-top:1px dashed #000000;
+	border-bottom:1px dashed #000000;
+	margin-top: 100px;
+	margin-left: 50px;	
+	font-weight:bold;
+	font-size:60px;
+	}
+	
+	h1 { 
+		color: #555; 
+		margin: 0 0 20px 0; 
+	}
+	
+	#page { 
+	float: left;
+		border: 1px solid #ddd; 
+		padding: 30px 40px 20px 40px; 
+		margin: 0px 27%;
+		width: 800px;
+		height: 1000px;
+		margin-bottom: 75px;
+		font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;    color: #3e4a49;
+		background-color: #f5eedb;  background: -webkit-gradient(linear, 0% 0%, 0% 50%, from(#f5eedb), to(#fff));   background: -moz-linear-gradient(0% 50% 90deg,#fff, #f5eedb); 
+		border-radius: 10px;  -moz-border-radius: 10px;  -webkit-border-radius: 10px;    box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+		-moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);  -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);	
+		 		
+	}	
+	form { 
+		float: left;
+		border: 1px solid #ddd; 
+		padding: 30px 40px 20px 40px; 
+		margin: 75px 0 0 0;
+		width: 715px;
+		background: #fff;
+				
+		/* -- CSS3 - define rounded corners for the form -- */	
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		border-radius: 10px; 		
+		
+		/* -- CSS3 - create a background graident -- */
+		background: -webkit-gradient(linear, 0% 0%, 0% 40%, from(#EEE), to(#FFFFFF)); 
+		background: -moz-linear-gradient(0% 40% 90deg,#FFF, #EEE); 
+		
+		/* -- CSS3 - add a drop shadow -- */
+		-webkit-box-shadow:0px 0 50px #ccc;
+		-moz-box-shadow:0px 0 50px #ccc; 
+		box-shadow:0px 0 50px #ccc;		 		
+	}	
+	
+	fieldset { border: none; }
+	
+		input, textarea { 		
+		padding: 8px; 
+		margin: 4px 0 20px 0; 
+		background: #fff; 
+		width: 220px; 
+		font-size: 14px; 
+		color: #555; 
+		border: 1px #ddd solid;
+		
+		/* -- CSS3 Shadow - create a shadow around each input element -- */ 
+		-webkit-box-shadow: 0px 0px 4px #aaa;
+		-moz-box-shadow: 0px 0px 4px #aaa; 
+		box-shadow: 0px 0px 4px #aaa;
+		
+		/* -- CSS3 Transition - define what the transition will be applied to (i.e. the background) -- */		
+		-webkit-transition: background 0.3s linear;							
+	}
+	
+	textarea {		
+		width: 390px; 
+		height: 75px; 		 		
+	}
+	
+	#comment-read-only {
+	background: #E6E6E6
+	}
+	
+	
+	input.submit { 	
+		width: 150px; 
+		color: #eee; 
+		text-transform: uppercase; 
+		margin-top: 10px;
+		background-color: #18a5cc;
+		border: none;	
+	} 
+	
+	input.submit:hover { 
+		cursor:  pointer; 
+	} 		
+	#menu, #menu ul {	margin: 0;	padding: 0;	list-style: none;}
+	#menu {	width: 478px;	margin: 60px auto;	border: 1px solid #F2CF64;	-moz-border-radius: 6px;	-webkit-border-radius: 6px;		border-radius: 6px;
+		background: -webkit-gradient(linear, 0% 0%, 0% 50%, from(#F2CF64), to(#F2CF64)); 
+		background: -moz-linear-gradient(0% 50% 90deg,#F2CF64, #F2CF64); 	}
+	#menu:before,
+	#menu:after {	content: "";	display: table;	}	
+	#menu:after {	clear: both;	}	
+	#menu {	zoom:1;	}
+	#menu li {	float: left;	border-right: 1px solid #F2CF64;	-moz-box-shadow: 1px 0 0 #444;	-webkit-box-shadow: 1px 0 0 #444;	box-shadow: 1px 0 0 #444;	position: relative;	}
+	#menu a {	float: left;	padding: 12px 30px;	color: #000;	text-transform: uppercase;	font: bold 12px Arial, Helvetica;	text-decoration: none;	text-shadow: 0 1px 0 #000;}
+	#menu li:hover > a {color: #2A7DEA;}
+	header 
+		{	margin:0;	  padding: 8px 10%;	  border-bottom: 1px solid C1BFBF;	  background: #848282;	  height: 45px;
+		background: -webkit-gradient(linear, 0% 0%, 0% 80%, from(#ADAEAF), to(#E7E8EB)); 
+		background: -moz-linear-gradient(0% 80% 90deg,#E7E8EB, #ADAEAF); 	  
+		-webkit-border-radius: 0 0 10px 10px;	-moz-border-radius: 0 0 10px 10px;	border-radius: 0 0 10px 10px; }
+		
+		nav #short-link
+		{	float:left;	position:relative;	padding:2px;	height: 40px;	margin-left: 10px;	background:#ffffff;
+		background: -webkit-gradient(linear, 0% 0%, 0% 50%, from(#747575), to(#DDDFE1)); 
+		background: -moz-linear-gradient(0% 50% 90deg,#DDDFE1, #747575); 
+		-moz-border-radius: 15px;	-webkit-border-radius: 15px;	border-radius: 15px; 
+		text-align:center;	font-size:20px;
+		-webkit-box-shadow:0px 0 10px #9D9E9F;	-moz-box-shadow:0px 0 10px #9D9E9F; 	box-shadow:0px 0 10px #9D9E9F;	}	
+		
+		nav #short-link a{	text-decoration: none;	margin-top:10px;	color:#000000;	}		
+		nav #short-link a:hover{	background:#ffffff;	color:#FFFFFF;	}
+		
+		
+		input[type="submit"] {
+		margin: 50px auto 0 auto;
+		width: 12em;
+		
+		padding: 10px;
+		border: 2px solid #593131;
+		border-radius: 10px;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;  
+  
+		-moz-box-shadow: 0 0 .5em rgba(0, 0, 0, 0);
+  
+		color: #fff;
+		background: #814C4C;
+		font-size: 1.2em;
+		font-weight: bold;
+		-webkit-appearance: none;
+		}
+
+		input[type="submit"]:hover, input[type="submit"]:active {
+		cursor: pointer;
+		background: #ccc;
+		color: #593131;
+		}
+
+		input[type="submit"]:active {
+		background: #eee;
+		box-shadow: 0 0 .5em rgba(0, 0, 0, .8) inset;
+		-moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8) inset;
+		-webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8) inset;
+		}
+	</style> 
+	
+</head> 
+ 
+<body> 
+	
+	
+<div id="page-head"> FORUMS </div>
+<header class="cf">
+<nav>
+	<div id="short-link">
+		<a href="/plan/" ><div style="margin-top:10px;">PLANNER	</div></a>
+	</div>
+	<div id="short-link">
+		<a href="/calendar/month/" ><div style="margin-top:10px;">CALENDER	</div></a>
+	</div>
+	<div id="short-link">
+		<a href="/groups/" ><div style="margin-top:10px;">GROUPS	</div></a>
+	</div>
+	<div id="short-link">
+		<a href="/forum/" ><div style="margin-top:10px;">FORUM	</div></a>
+	</div>
+	<div id="short-link">
+		<a href="/home/" ><div style="margin-top:10px;">HOME	</div></a>
+	</div>
+	<div id="short-link">
+		<a href="/logout/" ><div style="margin-top:10px;">LOGOUT	</div></a>
+	</div>
+</nav>
+<br />
+</header>
+<ul id="menu">
+    {% for forum in forums %}
+    <li><a href="/forum/{{ forum.pk }}/">{{ forum.title }}</a></li>
+    {% endfor %}
+</ul>
+	
+	
+<a href="/forum/{{forum_pk}}/" style="text-decoration:none; margin-left:27%; margin-bottom: 1%;"> <input type="submit" name="placeOrder" value="BACK TO TOPIC" /> </a>         
+
+
+<div id = "page">
+        <h1>{{ title }}</h1>
+        <p>Created by: {{ thread_object.creator.username }}</p>
+        {% if admin %}
+        <p style="float: right"><a href="/forum/thread/delete/{{ thread_object.pk }}/"> Delete this topic</a> </p>
+        {% endif %}
+            {% load comments %}
+            {% get_comment_count for thread_object as comment_count %}
+            <p>{{ comment_count }} comments have been posted. </p>
+						
+		
+			<br />
+            {% get_comment_list for thread_object as comment_list %}
+            {% for comment in comment_list %}
+			<br />
+            <div><b>{{ comment.user_name }}</b>          {{ comment.submit_date }}  </div>
+            <textarea readonly disabled id="comment-read-only">{{ comment.comment }} </textarea>
+            {% endfor %}
+			<br />
+            {% get_comment_form for thread_object as form %}
+            <table>
+                <form action="{% comment_form_target %}" method="POST">{% csrf_token %}
+                    {% if next %}<input type="hidden" name="next" value="{{ next }}" />{% endif %}
+                    {% for field in form %}
+                         {% if field.is_hidden %}
+                         {{ field }}
+                         {% else %}
+                         {% if field.name != "name" and field.name != "email" and field.name != "url" %}
+                         {% if field.errors %}{{ field.errors }}{% endif %}
+
+                         <p {% if field.errors %} class="error"{% endif %} {% ifequal field.name "honeypot" %} style="display:none;"{% endifequal %}>
+                         {{ field }}<input type="hidden" name="email" id="id_email" value="{{email}}"  />
+                         </p>
+                         {% endif %}
+                         {% endif %}
+                         {% endfor %}
+                         <input type="hidden" name="next" value="/thread/{{pk}}/" />
+                             <tr>
+                        <td colspan="2">
+                             <input type="submit" name="submit" value="Post" class="submit">
+                         </td>
+                     </tr>
+                 </form>
+             </table>
+         </div> 
+</body> 
+</html> 

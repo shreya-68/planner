@@ -1,0 +1,20 @@
+
+	#difficult1		{
+background: -webkit-gradient(linear, 0% 0%, 0% 70%, from(#FFFF66), to(#FFFFFF)); 
+		background: -moz-linear-gradient(0% 70% 70deg,#FFF, #FFFF66);}
+
+		#difficult2		{
+background: -webkit-gradient(linear, 0% 0%, 0% 70%, from(#ff0000), to(#FFFFFF)); 
+		background: -moz-linear-gradient(0% 70% 70deg,#FFF, #ff0000);}
+
+		#difficult3		{
+background: -webkit-gradient(linear, 0% 0%, 0% 70%, from(#6600cc), to(#FFFFFF)); 
+		background: -moz-linear-gradient(0% 70% 70deg,#FFF, #6600cc);}
+
+		#difficult4		{
+background: -webkit-gradient(linear, 0% 0%, 0% 70%, from(#cc3333), to(#FFFFFF)); 
+		background: -moz-linear-gradient(0% 70% 70deg,#FFF, #cc3333);}
+
+		#difficult5		{
+background: -webkit-gradient(linear, 0% 0%, 0% 70%, from(#666699), to(#FFFFFF)); 
+		background: -moz-linear-gradient(0% 70% 70deg,#FFF, #666699);}

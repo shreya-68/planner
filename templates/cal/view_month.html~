@@ -1,0 +1,155 @@
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>CALENDAR</title>
+    <script type="text/javascript" src="{{ STATIC_URL }}jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="planner-style.css" />
+    <script type="text/javascript" src="#"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$(".inner-block li a").hover(function() {
+			$(this).next("em").animate({opacity: "show", top: "50"}, "slow");
+		}, function() {
+			$(this).next("em").animate({opacity: "hide", top: "85"}, "fast");
+		});
+	});
+	</script>
+<style>
+		header 
+		{	margin:0;	  padding: 8px 10%;	  border-bottom: 1px solid C1BFBF;	  background: #848282;	  height: 45px;
+		background: -webkit-gradient(linear, 0% 0%, 0% 80%, from(#ADAEAF), to(#E7E8EB)); 
+		background: -moz-linear-gradient(0% 80% 90deg,#E7E8EB, #ADAEAF); 	  
+		-webkit-border-radius: 0 0 10px 10px;	-moz-border-radius: 0 0 10px 10px;	border-radius: 0 0 10px 10px; }
+		
+		nav #short-link
+		{	float:left;	position:relative;	padding:2px;	height: 40px;	margin-left: 10px;	background:#ffffff;
+		background: -webkit-gradient(linear, 0% 0%, 0% 50%, from(#747575), to(#DDDFE1)); 
+		background: -moz-linear-gradient(0% 50% 90deg,#DDDFE1, #747575); 
+		-moz-border-radius: 15px;	-webkit-border-radius: 15px;	border-radius: 15px; 
+		text-align:center;	font-size:20px;
+		-webkit-box-shadow:0px 0 10px #9D9E9F;	-moz-box-shadow:0px 0 10px #9D9E9F; 	box-shadow:0px 0 10px #9D9E9F;	}	
+		
+		nav #short-link a{	text-decoration: none;	margin-top:10px;	color:#000000;	}		
+		nav #short-link a:hover{	background:#ffffff;	color:#FFFFFF;	}
+		
+		#page{  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;  width: 1340px;  margin: 5px auto 5px auto;  padding: 25px 30px;  overflow: auto;  color: #3e4a49;
+		background-color: #f5eedb;  background: -webkit-gradient(linear, 0% 0%, 0% 50%, from(#f5eedb), to(#fff));   background: -moz-linear-gradient(0% 50% 90deg,#fff, #f5eedb); 
+		border-radius: 10px;  -moz-border-radius: 10px;  -webkit-border-radius: 10px;    box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+		-moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);  -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);}
+
+</style>
+</head>
+<body>
+
+<header class="cf">
+<nav>
+	<div id="short-link">
+		<a href="/plan/" ><div style="margin-top:10px;">PLANNER	</div></a>
+	</div>
+	<div id="short-link">
+		<a href="/calendar/month/" ><div style="margin-top:10px;">CALENDAR	</div></a>
+	</div>
+	<div id="short-link">
+		<a href="/groups/" ><div style="margin-top:10px;">GROUPS	</div></a>
+	</div>
+	<div id="short-link">
+		<a href="/forum/" ><div style="margin-top:10px;">FORUM	</div></a>
+	</div>
+	<div id="short-link">
+		<a href="/home/" ><div style="margin-top:10px;">HOME	</div></a>
+	</div>
+	<div id="short-link">
+		<a href="/logout/" ><div style="margin-top:10px;">LOGOUT	</div></a>
+	</div>
+</nav>
+</header>
+	
+	<div id="page-head"> CALENDAR </div>
+
+<div id="body-wrap">
+
+	<div id="page">
+		
+        <div class="month-date"> <span><a href="{% url schedule.views.view_month year month 'prev' %}" style="text-decoration:none;"><<</a></span> {{ month_name }} {{year}} <span><a href="{% url schedule.views.view_month year month 'next' %}" style="text-decoration:none;">>></a></span> </div>
+					<ul class="inner-block">
+						<li class="block-s ">
+							<p class="textstyle"> SUNDAY </p>
+						</li>
+						
+						<li class="block-s ">
+							<p class="textstyle"> MONDAY</p>
+						</li>
+						
+						<li class="block-s ">
+							<p class="textstyle"> TUESDAY</p>
+						</li>
+						<li class="block-s ">
+							<p class="textstyle"> WEDNESDAY</p>
+						</li>
+						<li class="block-s ">
+							<p class="textstyle"> THURSDAY</p>
+						</li>
+						<li class="block-s ">
+							<p class="textstyle"> FRIDAY</p>
+						</li>
+						<li class="block-s ">
+							<p class="textstyle"> SATURDAY</p>
+						</li>
+						
+						
+    {% for week in month_days %}
+    <div class = "block-new-row">
+        {% for day, entries, current, number in week %}
+        {% if day == 0 %}
+						<li class="block-r  " id='opac'> 
+							
+	
+						<div class="block-content-bottom">
+							</div>
+						</li>
+            {% else %}
+             {% if day != 0 and not current %}
+						<li class="block-r">
+                        <a href="#">{{ day }}</a>
+                        <em>{% for entry in entries %}
+                            {{ entry.name }}: {{ entry.datetime }}
+                            {% endfor %}
+                        </em>
+
+							<div class="block-content-bottom">
+							<div class="inner">
+                                no. of events:{{number}}
+							</div>
+							</div>
+						</li>
+            {% else %}
+             {% if day != 0 and current %}
+						<li class="block-r  " id="active"> 
+                        <a href="#">{{ day }}</a>
+                        <em>{% for entry in entries %}
+                            {{ entry.name }}: {{ entry.datetime }}
+                            {% endfor %}
+                        </em>
+
+						<div class="block-content-bottom" id="active-inner">
+						<div class="inner">
+                            no. of events:{{ number }}
+							</div>
+							</div>
+						</li>
+                        {% endif %}
+                        {% endif %}
+                        {% endif %}
+                        {% endfor %}
+                    </div>						
+                    {% endfor %}						
+						
+												
+					</ul>
+				
+			
+</div>
+</div>			
+<script type="text/javascript" src="{{ STATIC_URL }}jquery.js"> </script>
+<script type="text/javascript" src="{{ STATIC_URL }}hide.js"> </script>
+
+</body>

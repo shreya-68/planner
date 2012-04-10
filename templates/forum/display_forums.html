@@ -1,0 +1,205 @@
+<html> 
+<head> 
+	
+ 
+	<title>Forum Page</title> 
+	<link href='http://fonts.googleapis.com/css?family=Dancing+Script:regular,bold&v1' rel='stylesheet' type='text/css'>
+	<style type="text/css"> 
+	body { 
+		margin: 0; 
+		background: #eee url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAMAAAC6sdbXAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF3d3d////riJKgAAAAAJ0Uk5T/wDltzBKAAAAFUlEQVR42mJgBAEGGMmAxAYCgAADAAGGABmnk/7aAAAAAElFTkSuQmCC);
+	}
+	#page-head{
+	position:absolute;
+	border-top:1px dashed #000000;
+	border-bottom:1px dashed #000000;
+	margin-top: 100px;
+	margin-left: 50px;	
+	font-weight:bold;
+	font-size:60px;
+	}
+	header 
+		{	margin:0;	  padding: 8px 10%;	  border-bottom: 1px solid C1BFBF;	  background: #848282;	  height: 45px;
+		background: -webkit-gradient(linear, 0% 0%, 0% 80%, from(#ADAEAF), to(#E7E8EB)); 
+		background: -moz-linear-gradient(0% 80% 90deg,#E7E8EB, #ADAEAF); 	  
+		-webkit-border-radius: 0 0 10px 10px;	-moz-border-radius: 0 0 10px 10px;	border-radius: 0 0 10px 10px; }
+		
+		nav #short-link
+		{	float:left;	position:relative;	padding:2px;	height: 40px;	margin-left: 10px;	background:#ffffff;
+		background: -webkit-gradient(linear, 0% 0%, 0% 50%, from(#747575), to(#DDDFE1)); 
+		background: -moz-linear-gradient(0% 50% 90deg,#DDDFE1, #747575); 
+		-moz-border-radius: 15px;	-webkit-border-radius: 15px;	border-radius: 15px; 
+		text-align:center;	font-size:20px;
+		-webkit-box-shadow:0px 0 10px #9D9E9F;	-moz-box-shadow:0px 0 10px #9D9E9F; 	box-shadow:0px 0 10px #9D9E9F;	}	
+		
+		nav #short-link a{	text-decoration: none;	margin-top:10px;	color:#000000;	}		
+		nav #short-link a:hover{	background:#ffffff;	color:#FFFFFF;	}
+	h1 { 
+		color: #555; 
+		margin: 0 0 20px 0; 
+	}
+	
+	form { 
+		float: left;
+		border: 1px solid #ddd; 
+		padding: 30px 40px 20px 40px; 
+		margin: 0px 27%;
+		width: 800px;
+		height: 1000px;
+		margin-bottom: 75px;
+		font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;    color: #3e4a49;
+		background-color: #f5eedb;  background: -webkit-gradient(linear, 0% 0%, 0% 50%, from(#f5eedb), to(#fff));   background: -moz-linear-gradient(0% 50% 90deg,#fff, #f5eedb); 
+		border-radius: 10px;  -moz-border-radius: 10px;  -webkit-border-radius: 10px;    box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+		-moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);  -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);		
+		 		
+	}	
+	fieldset { border: none; }
+	
+		input, textarea { 		
+		padding: 8px; 
+		margin: 4px 0 20px 0; 
+		background: #fff; 
+		width: 220px; 
+		font-size: 14px; 
+		color: #555; 
+		border: 1px #ddd solid;
+		
+		/* -- CSS3 Shadow - create a shadow around each input element -- */ 
+		-webkit-box-shadow: 0px 0px 4px #aaa;
+		-moz-box-shadow: 0px 0px 4px #aaa; 
+		box-shadow: 0px 0px 4px #aaa;
+		
+		/* -- CSS3 Transition - define what the transition will be applied to (i.e. the background) -- */		
+		-webkit-transition: background 0.3s linear;							
+	}
+	
+	textarea {		
+		width: 390px; 
+		height: 75px; 		 		
+	}
+	a:link {color:#000000; text-decoration: none}    /* unvisited link */
+a:visited {color:#00008B;} /* visited link */
+a:hover {text-shadow:0px 1px #999;}   /* mouse over link */
+a:active {color:#0000FF;}  /* selected link */
+	
+	#menu, #menu ul {	margin: 0;	padding: 0;	list-style: none;}
+	#menu {	width: 478px;	margin: 60px auto;	border: 1px solid #F2CF64;	-moz-border-radius: 6px;	-webkit-border-radius: 6px;		border-radius: 6px;
+		background: -webkit-gradient(linear, 0% 0%, 0% 50%, from(#F2CF64), to(#F2CF64)); 
+		background: -moz-linear-gradient(0% 50% 90deg,#F2CF64, #F2CF64); 	}
+	#menu:before,
+	#menu:after {	content: "";	display: table;	}	
+	#menu:after {	clear: both;	}	
+	#menu {	zoom:1;	}
+	#menu li {	float: left;	border-right: 1px solid #F2CF64;	-moz-box-shadow: 1px 0 0 #444;	-webkit-box-shadow: 1px 0 0 #444;	box-shadow: 1px 0 0 #444;	position: relative;	}
+	#menu a {	float: left;	padding: 12px 30px;	color: #000;	text-transform: uppercase;	font: bold 12px Arial, Helvetica;	text-decoration: none;	text-shadow: 0 1px 0 #000;}
+	#menu li:hover > a {color: #2A7DEA;}
+	*html #menu li a:hover { /* IE6 only */	color: #2A7DEA;}	
+	
+	</style>
+</script>
+
+<style type="text/css">
+
+#forum a {
+	color: #333300;
+	font-size:130%;
+	text-decoration: none;
+}
+#forum a:visited {
+	color: #333300;
+}
+#forum a:hover {
+	color: #333300;
+	text-decoration: underline;
+}
+#forum h3 {
+	margin: 0;
+	padding: 0 0 .3em;
+}
+#forum p {
+	margin: 0;
+	padding: 0 0 .5em;
+}
+#forum .pane-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#forum .pane-list li {
+	background: #F3D782;
+	padding: 10px 20px 10px;
+	border-top: solid 1px #000000;
+	cursor: pointer;
+}
+#forum .pane-list li:hover {
+	background: #F5EAC9;
+}
+</style>
+	
+
+</head> 
+<body>
+<div id="page-head"> FORUMS </div>
+
+<header class="cf">
+<nav>
+	<div id="short-link">
+		<a href="/plan/" ><div style="margin-top:10px;">PLANNER	</div></a>
+	</div>
+	<div id="short-link">
+		<a href="/calendar/month/" ><div style="margin-top:10px;">CALENDER	</div></a>
+	</div>
+	<div id="short-link">
+		<a href="/groups/" ><div style="margin-top:10px;">GROUPS	</div></a>
+	</div>
+	<div id="short-link">
+		<a href="/forum/" ><div style="margin-top:10px;">FORUM	</div></a>
+	</div>
+	<div id="short-link">
+		<a href="/home/" ><div style="margin-top:10px;">HOME	</div></a>
+	</div>
+	<div id="short-link">
+		<a href="/logout/" ><div style="margin-top:10px;">LOGOUT	</div></a>
+	</div>
+</nav>
+
+
+</header>
+
+  
+<ul id="menu">
+    {% for forum in forums %}
+    <li><a href="/forum/{{ forum.pk }}/">{{ forum.title }}</a></li>
+    {% endfor %}
+</ul>
+
+<div align: center>{{ forum }}</div>
+
+<!--
+<input type="submit" name="submit" value="Post" class="submit" href="/add_thread/{{ pk }}/">
+-->
+	
+	<form action="#"> 
+<!--	<div class="paginated-comment wp-pagenavi">Page: <span class="page-numbers current">1</span>
+<a class="page-numbers" href="/?&amp;page=2">2</a>
+<a class="page-numbers" href="/?&amp;page=3">3</a>-->
+<!--<a class="next page-numbers" href="/?&amp;page=2">Next &gt;&gt;</a></div>-->
+        {% for forum, num_threads in lst %}
+	<div id="forum">
+		<ul class="pane-list">
+		<li>	
+        <h3><a href = "/forum/{{ forum.pk }}/">{{ forum.title }}</a></h3>
+        <p>Number of threads: <b>{{ num_threads }} </b></p>
+		</li>
+		</ul>
+		
+</div>
+<hr />
+{% endfor %}
+		
+		
+		 
+	</form>	
+ 
+</body> 
+</html> 

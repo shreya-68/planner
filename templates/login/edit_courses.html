@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Edit Courses</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+
+<style>
+
+body {
+	background: #eee url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAMAAAC6sdbXAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF3d3d////riJKgAAAAAJ0Uk5T/wDltzBKAAAAFUlEQVR42mJgBAEGGMmAxAYCgAADAAGGABmnk/7aAAAAAElFTkSuQmCC);
+  margin: 0;
+  }
+
+		header 
+		{	margin:0;	  padding: 8px 10%;	  border-bottom: 1px solid C1BFBF;	  background: #848282;	  height: 45px;
+		background: -webkit-gradient(linear, 0% 0%, 0% 80%, from(#ADAEAF), to(#E7E8EB)); 
+		background: -moz-linear-gradient(0% 80% 90deg,#E7E8EB, #ADAEAF); 	  
+		-webkit-border-radius: 0 0 10px 10px;	-moz-border-radius: 0 0 10px 10px;	border-radius: 0 0 10px 10px; }
+		
+		nav #short-link
+		{	float:left;	position:relative;	padding:2px;	height: 40px;	margin-left: 10px;	background:#ffffff;
+		background: -webkit-gradient(linear, 0% 0%, 0% 50%, from(#747575), to(#DDDFE1)); 
+		background: -moz-linear-gradient(0% 50% 90deg,#DDDFE1, #747575); 
+		-moz-border-radius: 15px;	-webkit-border-radius: 15px;	border-radius: 15px; 
+		text-align:center;	font-size:20px;
+		-webkit-box-shadow:0px 0 10px #9D9E9F;	-moz-box-shadow:0px 0 10px #9D9E9F; 	box-shadow:0px 0 10px #9D9E9F;	}	
+		
+		nav #short-link a{	text-decoration: none;	margin-top:10px;	color:#000000;	}		
+		nav #short-link a:hover{	background:#ffffff;	color:#FFFFFF;	}
+
+
+form {  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;  width: 50%;  margin: 50px auto 50px auto;  padding: 50px 60px;  overflow: auto;  color: #3e4a49;
+		background-color: #f5eedb;  background: -webkit-gradient(linear, 0% 0%, 0% 50%, from(#f5eedb), to(#fff));   background: -moz-linear-gradient(0% 50% 90deg,#fff, #f5eedb); 
+		border-radius: 10px;  -moz-border-radius: 10px;  -webkit-border-radius: 10px;    box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+		-moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);  -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);}
+
+form ul {  list-style: none;  margin: 0;   padding: 0;
+}
+
+form ul li {  margin: .9em 0 0 0;  padding: 0; }
+
+form * {  line-height: 1em; }
+
+
+/* Form heading */
+
+form h1 {  margin: 0 0 1.5em 0;  padding: 0;  text-align: center; }
+
+
+/* Give each fieldset a darker background, dark curved border and plenty of space */
+
+fieldset {
+  padding: 0 20px 20px;
+  margin: 0 0 30px;
+  border: 2px solid #593131;
+  background: #eae1c0;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+
+
+
+legend {
+  color: #fff;
+  background: #8fb98b;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9em;
+  font-weight: bold;
+  text-align: center;
+  padding: 5px;
+  margin: 0;
+  width: 9em;
+  border: 2px solid #593131;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+label {
+  display: block;
+  float: left;
+  clear: left;
+  text-align: right;
+  width: 40%;
+  padding: .4em 0 0 0;
+  margin: .15em .5em 0 0;
+}
+
+
+input, textarea {
+  display: block;
+  margin: 0;
+  padding: .4em;
+  width: 50%;
+}
+select{
+   margin: 0;
+  padding: .4em;
+  width: 10%;
+}
+input, textarea, .date {
+  border: 2px solid #eae1c0;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;    
+  box-shadow: rgba(0,0,0,.5) 1px 1px 1px 1px inset;
+  -moz-box-shadow: rgba(0,0,0,.5) 1px 1px 1px 1px inset;
+  -webkit-box-shadow: rgba(0,0,0,.5) 1px 1px 1px 1px inset;
+  background: #fff;
+}
+
+input {
+  font-size: .9em;
+}
+
+select {
+  padding: 0;
+  margin-bottom: 1em;
+  position: relative;
+  top: .7em;
+}
+
+textarea {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  font-size: .9em;
+  height: 5em;
+}
+
+
+
+form *:focus {
+  border: 2px solid #593131;
+  outline: none;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+
+
+input:valid, textarea:valid {
+  background: #efe;
+}
+
+
+input[type="submit"] {
+  margin: 50px auto 0 auto;
+  width: 12em;
+  padding: 10px;
+  border: 2px solid #593131;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;  
+  
+  -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, 0);
+  
+  color: #fff;
+  background: #eae1c0;
+  font-size: 1.2em;
+  font-weight: bold;
+  -webkit-appearance: none;
+}
+
+input[type="submit"]:hover, input[type="submit"]:active {
+  cursor: pointer;
+  background: #ccc;
+  color: #593131;
+}
+
+input[type="submit"]:active {
+  background: #eee;
+  box-shadow: 0 0 .5em rgba(0, 0, 0, .8) inset;
+  -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8) inset;
+  -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8) inset;
+}
+</style>
+</head>
+
+<body>
+
+
+
+
+<header class="cf">
+<nav>
+	<div id="short-link">
+		<a href="/plan/" ><div style="margin-top:10px;">PLANNER	</div></a>
+	</div>
+	<div id="short-link">
+		<a href="/calendar/month/" ><div style="margin-top:10px;">CALENDER	</div></a>
+	</div>
+	<div id="short-link">
+		<a href="/groups/" ><div style="margin-top:10px;">GROUPS	</div></a>
+	</div>
+	<div id="short-link">
+		<a href="/forum/" ><div style="margin-top:10px;">FORUM	</div></a>
+	</div>
+	<div id="short-link">
+		<a href="/home/" ><div style="margin-top:10px;">HOME	</div></a>
+	</div>
+	<div id="short-link">
+		<a href="/logout/" ><div style="margin-top:10px;">LOGOUT	</div></a>
+	</div>
+</nav>
+
+
+</header>
+	
+
+
+
+<form id="orderForm" action="/edit_courses/" method="post">
+
+  <h1>Edit Courses</h1>
+
+ 
+
+	<fieldset>
+    <legend>Course Information</legend>
+
+    <ul>
+	  <li>
+        <label for="phone">Courses:</label>
+        <select name="course_1" id="field3">
+            <option selected="selected">None</option>
+            {% for course in courses %}
+            <option >{{ course.id }}</option>
+            {% endfor %}
+    </select>
+      </li>
+	  <li>
+        <select name="course_2" id="field3">
+            <option selected="selected">None</option>
+            {% for course in courses %}
+            <option >{{ course.id }}</option>
+            {% endfor %}
+    </select>
+      </li>
+	  <li>
+        <select name="course_3" id="field3">
+            <option selected="selected">None</option>
+            {% for course in courses %}
+            <option >{{ course.id }}</option>
+            {% endfor %}
+    </select>
+      </li>
+	  <li>
+        <select name="course_4" id="field3">
+            <option selected="selected">None</option>
+            {% for course in courses %}
+            <option >{{ course.id }}</option>
+            {% endfor %}
+    </select>
+      </li>
+	  <li>
+        <select name="course_5" id="field3">
+            <option selected="selected">None</option>
+            {% for course in courses %}
+            <option >{{ course.id }}</option>
+            {% endfor %}
+    </select>
+      </li>
+	  <li>
+        <select name="course_6" id="field3">
+            <option selected="selected">None</option>
+            {% for course in courses %}
+            <option >{{ course.id }}</option>
+            {% endfor %}
+    </select>
+      </li>
+	  
+
+    </ul>
+
+  </fieldset>
+
+  <input type="submit" name="placeOrder" value="Confirm" />
+   
+</form>
+
+
+</body>
+</html>
+
+
